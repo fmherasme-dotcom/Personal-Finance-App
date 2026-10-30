@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--amber,#D4A24C);text-decoration:none}a:hover{color:var(--text,#EDEAE4)}button{font-family:inherit;cursor:pointer}</style>
+<style>html[data-theme=light]{--track:#ECE8E1;--canvas:#E8E5DF;--bg:#F7F5F1;--s1:#FFFFFF;--s2:#F0EDE7;--line:#E2DED6;--ring:#D9D5CD;--rule:#DEDAD2;--dash:#C9C4BA;--dash2:#A8A298;--tick:#BDB7AD;--text:#1B1A17;--muted:#6A665E;--muted2:#76726A;--faint:#8C877E;--amber:#B07D28;--green:#2B8A60;--orange:#C25A24;--red:#C23E3A;--red2:#C23E3A;--tabbg:rgba(247,245,241,.94)}html[data-theme=light] body{background:#E8E5DF;color:#1B1A17}html[data-theme=light] [stroke="#202327"]{stroke:#ECE8E1}html[data-theme=light] [fill="#202327"]{fill:#ECE8E1}html[data-theme=light] [stop-color="#202327"]{stop-color:#ECE8E1}html[data-theme=light] [stroke="#08090A"]{stroke:#E8E5DF}html[data-theme=light] [fill="#08090A"]{fill:#E8E5DF}html[data-theme=light] [stop-color="#08090A"]{stop-color:#E8E5DF}html[data-theme=light] [stroke="#0E0F11"]{stroke:#F7F5F1}html[data-theme=light] [fill="#0E0F11"]{fill:#F7F5F1}html[data-theme=light] [stop-color="#0E0F11"]{stop-color:#F7F5F1}html[data-theme=light] [stroke="#17191C"]{stroke:#FFFFFF}html[data-theme=light] [fill="#17191C"]{fill:#FFFFFF}html[data-theme=light] [stop-color="#17191C"]{stop-color:#FFFFFF}html[data-theme=light] [stroke="#1F2226"]{stroke:#F0EDE7}html[data-theme=light] [fill="#1F2226"]{fill:#F0EDE7}html[data-theme=light] [stop-color="#1F2226"]{stop-color:#F0EDE7}html[data-theme=light] [stroke="#2A2D31"]{stroke:#E2DED6}html[data-theme=light] [fill="#2A2D31"]{fill:#E2DED6}html[data-theme=light] [stop-color="#2A2D31"]{stop-color:#E2DED6}html[data-theme=light] [stroke="#24272B"]{stroke:#D9D5CD}html[data-theme=light] [fill="#24272B"]{fill:#D9D5CD}html[data-theme=light] [stop-color="#24272B"]{stop-color:#D9D5CD}html[data-theme=light] [stroke="#1E2023"]{stroke:#DEDAD2}html[data-theme=light] [fill="#1E2023"]{fill:#DEDAD2}html[data-theme=light] [stop-color="#1E2023"]{stop-color:#DEDAD2}html[data-theme=light] [stroke="#3A3D42"]{stroke:#C9C4BA}html[data-theme=light] [fill="#3A3D42"]{fill:#C9C4BA}html[data-theme=light] [stop-color="#3A3D42"]{stop-color:#C9C4BA}html[data-theme=light] [stroke="#5A5650"]{stroke:#A8A298}html[data-theme=light] [fill="#5A5650"]{fill:#A8A298}html[data-theme=light] [stop-color="#5A5650"]{stop-color:#A8A298}html[data-theme=light] [stroke="#44474C"]{stroke:#BDB7AD}html[data-theme=light] [fill="#44474C"]{fill:#BDB7AD}html[data-theme=light] [stop-color="#44474C"]{stop-color:#BDB7AD}html[data-theme=light] [stroke="#EDEAE4"]{stroke:#1B1A17}html[data-theme=light] [fill="#EDEAE4"]{fill:#1B1A17}html[data-theme=light] [stop-color="#EDEAE4"]{stop-color:#1B1A17}html[data-theme=light] [stroke="#9A968F"]{stroke:#6A665E}html[data-theme=light] [fill="#9A968F"]{fill:#6A665E}html[data-theme=light] [stop-color="#9A968F"]{stop-color:#6A665E}html[data-theme=light] [stroke="#8A867F"]{stroke:#76726A}html[data-theme=light] [fill="#8A867F"]{fill:#76726A}html[data-theme=light] [stop-color="#8A867F"]{stop-color:#76726A}html[data-theme=light] [stroke="#6E6A64"]{stroke:#8C877E}html[data-theme=light] [fill="#6E6A64"]{fill:#8C877E}html[data-theme=light] [stop-color="#6E6A64"]{stop-color:#8C877E}html[data-theme=light] [stroke="#D4A24C"]{stroke:#B07D28}html[data-theme=light] [fill="#D4A24C"]{fill:#B07D28}html[data-theme=light] [stop-color="#D4A24C"]{stop-color:#B07D28}html[data-theme=light] [stroke="#3FA37A"]{stroke:#2B8A60}html[data-theme=light] [fill="#3FA37A"]{fill:#2B8A60}html[data-theme=light] [stop-color="#3FA37A"]{stop-color:#2B8A60}html[data-theme=light] [stroke="#E0703A"]{stroke:#C25A24}html[data-theme=light] [fill="#E0703A"]{fill:#C25A24}html[data-theme=light] [stop-color="#E0703A"]{stop-color:#C25A24}html[data-theme=light] [stroke="#D9534F"]{stroke:#C23E3A}html[data-theme=light] [fill="#D9534F"]{fill:#C23E3A}html[data-theme=light] [stop-color="#D9534F"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#E8807C"]{stroke:#C23E3A}html[data-theme=light] [fill="#E8807C"]{fill:#C23E3A}html[data-theme=light] [stop-color="#E8807C"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#D4A24C88"]{stroke:#B07D2888}html[data-theme=light] [stroke="#E0703A88"]{stroke:#C25A2488}html[data-theme=light] [stroke="#3FA37A88"]{stroke:#2B8A6088}</style>
+<script src="theme.js"></script>
+</helmet>
+<div style="padding:72px 80px 120px;width:1440px;box-sizing:border-box;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif;min-height:100vh">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:80px;margin-bottom:64px;padding-bottom:28px;border-bottom:1px solid var(--rule,#1E2023)">
+<div><div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.16em;color:var(--amber,#D4A24C)">RECLAIM · DESIGN SYSTEM</div><div style="font-size:44px;letter-spacing:-.02em;margin-top:10px">Instrument cluster, private bank</div></div>
+<nav style="display:flex;gap:28px;font-size:15px"><span>Design system</span><a href="Reclaim%201%20Onboarding%20and%20Home.dc.html">Onboarding &amp; Home</a><a href="Reclaim%202%20Waste%20and%20Business.dc.html">Waste &amp; Business</a><a href="Reclaim%203%20Net%20Worth%20and%20Retirement.dc.html">Net Worth &amp; Retirement</a><a href="Reclaim%204%20Bills%20Coach%20Entry%20Settings.dc.html">Bills, Coach, Entry, Settings</a><button onClick="{{ toggleTheme }}" style="height:40px;padding:0 16px;border-radius:20px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);font-size:14px;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg>{{ themeLabel }}</button></nav>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+
+<div style="grid-column:span 2;background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">01 · COLOR</div>
+<div style="display:grid;grid-template-columns:repeat(11,1fr);gap:12px">
+<div><div style="height:88px;border-radius:14px;background:var(--bg,#0E0F11);box-shadow:inset 0 0 0 1px var(--line,#2A2D31)"></div><div style="font-size:14px;margin-top:10px">Base</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--bg,#0E0F11)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--s1,#17191C)"></div><div style="font-size:14px;margin-top:10px">Surface 1</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--s1,#17191C)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--s2,#1F2226)"></div><div style="font-size:14px;margin-top:10px">Surface 2</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--s2,#1F2226)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--line,#2A2D31)"></div><div style="font-size:14px;margin-top:10px">Hairline</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--line,#2A2D31)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--text,#EDEAE4)"></div><div style="font-size:14px;margin-top:10px">Text</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--text,#EDEAE4)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--muted,#9A968F)"></div><div style="font-size:14px;margin-top:10px">Text 2</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--muted,#9A968F)</div></div>
+<div style="grid-column:span 2"><div style="height:88px;border-radius:14px;background:var(--amber,#D4A24C);box-shadow:0 10px 30px rgba(212,162,76,.25)"></div><div style="font-size:14px;margin-top:10px">Amber · key figures, primary</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--amber,#D4A24C)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--green,#3FA37A)"></div><div style="font-size:14px;margin-top:10px">Saved</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--green,#3FA37A)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--orange,#E0703A)"></div><div style="font-size:14px;margin-top:10px">Waste</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--orange,#E0703A)</div></div>
+<div><div style="height:88px;border-radius:14px;background:var(--red,#D9534F)"></div><div style="font-size:14px;margin-top:10px">Overdue only</div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);margin-top:2px">var(--red,#D9534F)</div></div>
+</div></div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">02 · TYPE · GEIST, TABULAR FIGURES</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Gauge 58/300</span><span style="font-size:58px;font-weight:300;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--amber,#D4A24C);line-height:1">$1,316</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Figure 28/300</span><span style="font-size:28px;font-weight:300;font-variant-numeric:tabular-nums">$1,240,000</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Title 28/400</span><span style="font-size:28px;letter-spacing:-.02em">Weekly Pulse</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Heading 18/400</span><span style="font-size:18px">Waste spotted this week</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Body 16/400</span><span style="font-size:16px;line-height:1.5">Canceling the second cloud plan freed $20 a month.</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Meta 13/400</span><span style="font-size:13px;color:var(--muted,#9A968F)">Business B · $4,800/yr</span></div>
+<div style="display:flex;align-items:baseline;gap:20px"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted,#9A968F);width:110px;flex:none">Eyebrow 12/500</span><span style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">RECLAIMED THIS YEAR</span></div>
+</div></div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">03 · GAUGES · SWEEP IN 1.6S, EASE-OUT, NUMBERS COUNT UP</div>
+<div style="display:flex;align-items:center;gap:28px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><dc-import name="Gauge" pct="0.62" size="230" thickness="7" num="1240000" prefix="$" num-size="30" label="Net worth" sub="+$3,850" sub-color="var(--green,#3FA37A)" hint-size="230px,230px"></dc-import><span style="font-size:13px;color:var(--muted,#9A968F)">Hero · ticked</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><dc-import name="Gauge" pct="0.48" size="150" thickness="12" color="#E0703A" num="1316" prefix="$" num-size="26" sub="per month" ticks="false" hint-size="150px,150px"></dc-import><span style="font-size:13px;color:var(--muted,#9A968F)">Waste · solid</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px"><dc-import name="Gauge" pct="0.62" size="92" thickness="11" ticks="false" text="62%" num-size="20" gap="0" pad-top="4" hint-size="92px,92px"></dc-import><span style="font-size:13px;color:var(--muted,#9A968F)">Mini</span></div>
+</div>
+<div style="font-size:14px;color:var(--muted,#9A968F);margin-top:20px;line-height:1.5">270° arc, round caps, soft amber bloom under the value. Ticks light up as the arc passes them. Color follows meaning: amber for progress, orange for waste, green for money kept.</div>
+</div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">04 · BUTTONS</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<button style="height:56px;padding:0 28px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)" style-hover="background:#E0B160">Primary</button>
+<button style="height:56px;padding:0 28px;border-radius:16px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--text,#EDEAE4);font-size:17px" style-hover="background:#262A2E">Secondary</button>
+<button style="height:56px;padding:0 20px;border-radius:16px;border:none;background:transparent;color:var(--muted,#9A968F);font-size:17px" style-hover="color:var(--text,#EDEAE4)">Ghost</button>
+<button style="height:34px;padding:0 14px;border-radius:10px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button>
+<button style="height:30px;padding:0 10px;border-radius:8px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--amber,#D4A24C);font-size:13px">Update</button>
+<div style="width:56px;height:56px;border-radius:28px;background:var(--amber,#D4A24C);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(212,162,76,.32)"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M11 3v16M3 11h16" stroke="#17130B" stroke-width="2" stroke-linecap="round"></path></svg></div>
+</div>
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin:32px 0 18px">05 · TAGS</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(63,163,122,.15);color:var(--green,#3FA37A)">Paid</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Due soon</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(217,83,79,.16);color:var(--red2,#E8807C)">Overdue</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(224,112,58,.15);color:var(--orange,#E0703A)">Possibly unused</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;border:1px solid var(--line,#2A2D31);color:var(--muted,#9A968F)">Personal</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;border:1px solid var(--line,#2A2D31);color:var(--muted,#9A968F)">Business A</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;border:1px solid var(--line,#2A2D31);color:var(--muted,#9A968F)">Business B</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Owner</span>
+<span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Coming soon</span>
+</div>
+<div style="display:flex;gap:8px;margin-top:16px"><span style="height:36px;padding:0 14px;border-radius:18px;background:rgba(212,162,76,.14);border:1px solid var(--amber,#D4A24C);color:var(--amber,#D4A24C);font-size:14px;display:flex;align-items:center">All 11</span><span style="height:36px;padding:0 14px;border-radius:18px;background:var(--s1,#17191C);border:1px solid var(--line,#2A2D31);font-size:14px;display:flex;align-items:center">Personal 6</span><span style="height:36px;padding:0 14px;border-radius:18px;background:var(--s1,#17191C);border:1px solid var(--line,#2A2D31);font-size:14px;display:flex;align-items:center">Business A 2</span></div>
+</div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">06 · CARDS · 18–20 RADIUS, INNER LIGHT, NO DROP SHADOWS</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)"><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">STANDARD</div><div style="font-size:24px;font-weight:300;margin-top:10px;font-variant-numeric:tabular-nums">$6,200</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">Surface 1</div></div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(224,112,58,.25)"><div style="font-size:12px;letter-spacing:.12em;color:var(--orange,#E0703A);font-weight:500">WASTE</div><div style="font-size:24px;font-weight:300;margin-top:10px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$304</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">Orange hairline</div></div>
+<div style="background:var(--s2,#1F2226);border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(212,162,76,.35)"><div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">SELECTED</div><div style="font-size:16px;margin-top:10px">Business A · Restoration</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">Surface 2 + amber ring</div></div>
+<div style="border-radius:18px;padding:18px;background:linear-gradient(160deg,var(--s2,#1F2226),var(--s1,#17191C));box-shadow:inset 0 0 0 1px rgba(212,162,76,.28), inset 0 0 50px rgba(212,162,76,.05)"><div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">FEATURE</div><div style="font-size:16px;margin-top:10px">One move this week</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">Coach, What-if</div></div>
+</div></div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">07 · FORM FIELDS</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:6px">Amount · focused</div><div style="height:52px;border-radius:14px;background:var(--s1,#17191C);border:1px solid var(--amber,#D4A24C);box-shadow:0 0 0 4px rgba(212,162,76,.1);display:flex;align-items:center;padding:0 16px;font-size:18px;font-variant-numeric:tabular-nums">$3,500</div></div>
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:6px">Select</div><div style="height:52px;border-radius:14px;background:var(--s1,#17191C);border:1px solid var(--line,#2A2D31);display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:16px">Dining out<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#9A968F" stroke-width="1.4"><path d="M3 4.5l3 3 3-3"></path></svg></div></div>
+<div style="grid-column:span 2"><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:6px">Segmented</div><div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--s1,#17191C);border-radius:12px;padding:4px;gap:4px"><div style="height:38px;border-radius:9px;background:var(--line,#2A2D31);display:flex;align-items:center;justify-content:center;font-size:14px">Personal</div><div style="height:38px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted,#9A968F)">Business A</div><div style="height:38px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted,#9A968F)">Business B</div></div></div>
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:10px">Toggle</div><div style="display:flex;gap:12px"><span style="width:50px;height:30px;border-radius:15px;background:var(--amber,#D4A24C);position:relative"><span style="position:absolute;right:2px;top:2px;width:26px;height:26px;border-radius:13px;background:#FFF"></span></span><span style="width:50px;height:30px;border-radius:15px;background:var(--line,#2A2D31);position:relative"><span style="position:absolute;left:2px;top:2px;width:26px;height:26px;border-radius:13px;background:#FFF"></span></span></div></div>
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:10px">Slider</div><div style="position:relative;height:28px"><div style="position:absolute;top:13px;left:0;right:0;height:3px;border-radius:2px;background:var(--line,#2A2D31)"></div><div style="position:absolute;top:13px;left:0;width:50%;height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="position:absolute;top:3px;left:calc(50% - 11px);width:22px;height:22px;border-radius:11px;background:var(--text,#EDEAE4);box-shadow:0 0 0 5px rgba(212,162,76,.2)"></div></div></div>
+</div></div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">08 · CHARTS · SLIM LINES, HORIZONTAL BARS</div>
+<svg viewBox="0 0 520 120" width="100%" height="120" style="display:block">
+<line x1="0" y1="30" x2="520" y2="30" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="70" x2="520" y2="70" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="110" x2="520" y2="110" stroke="#2A2D31"></line>
+<polyline points="0,96 47,90 94,95 141,78 188,70 235,74 282,60 329,50 376,55 423,40 470,30 520,22" fill="none" stroke="#D4A24C" stroke-width="2" stroke-linejoin="round"></polyline>
+<polyline points="0,80 47,72 94,60 141,79 188,84 235,76 282,70 329,67 376,62 423,68 470,58 520,62" fill="none" stroke="#EDEAE4" stroke-opacity=".7" stroke-width="1.5" stroke-linejoin="round"></polyline>
+<circle cx="520" cy="22" r="4" fill="#D4A24C"></circle></svg>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:24px">
+<div><div style="display:flex;justify-content:space-between;font-size:14px;font-variant-numeric:tabular-nums"><span>Groceries</span><span><span style="color:var(--green,#3FA37A)">$1,140</span><span style="color:var(--muted,#9A968F)"> / $1,400</span></span></div><div style="height:4px;border-radius:2px;background:var(--track,#202327);margin-top:8px"><div style="height:4px;border-radius:2px;background:var(--green,#3FA37A);width:81%"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:14px;font-variant-numeric:tabular-nums"><span>Housing</span><span><span style="color:var(--orange,#E0703A)">$4,210</span><span style="color:var(--muted,#9A968F)"> / $4,300</span></span></div><div style="height:4px;border-radius:2px;background:var(--track,#202327);margin-top:8px"><div style="height:4px;border-radius:2px;background:var(--orange,#E0703A);width:98%"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:14px;font-variant-numeric:tabular-nums"><span>Dining out</span><span><span style="color:var(--red,#D9534F)">$812</span><span style="color:var(--muted,#9A968F)"> / $600</span></span></div><div style="height:4px;border-radius:2px;background:var(--track,#202327);margin-top:8px"><div style="height:4px;border-radius:2px;background:var(--red,#D9534F);width:100%"></div></div></div>
+</div></div>
+
+<div style="background:var(--bg,#0E0F11);border-radius:24px;padding:32px;box-shadow:inset 0 0 0 1px var(--rule,#1E2023)">
+<div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);margin-bottom:22px">09 · NAVIGATION · 1.4 STROKE ICONS</div>
+<div style="width:390px;height:160px;position:relative;border-radius:20px;overflow:hidden;background:var(--bg,#0E0F11);box-shadow:inset 0 0 0 1px var(--line,#2A2D31)">
+<dc-import name="TabBar" active="waste" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import></div>
+<div style="font-size:14px;color:var(--muted,#9A968F);margin-top:18px;line-height:1.5">Five tabs: Home, Waste, Net Worth, Bills, Coach. The amber + opens quick entry from anywhere. Business, Retirement, Budget and Settings live behind Home and the profile avatar.</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._th = () => this.forceUpdate(); window.addEventListener('reclaim-theme', this._th); }
+  componentWillUnmount() { window.removeEventListener('reclaim-theme', this._th); }
+  renderVals() {
+    const light = !!(window.reclaimTheme && window.reclaimTheme() === 'light');
+    return { toggleTheme: () => window.reclaimToggleTheme && window.reclaimToggleTheme(), themeLabel: light ? 'Dark mode' : 'Light mode' };
+  }
+}
+</script>
+</body>
+</html>

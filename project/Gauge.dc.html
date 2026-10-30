@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:relative;width:{{ size }}px;height:{{ size }}px;flex:none">
+<svg viewBox="0 0 200 200" width="{{ size }}" height="{{ size }}" style="position:absolute;inset:0;overflow:visible">
+<defs><filter id="{{ fid }}" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"></feGaussianBlur></filter></defs>
+<sc-for list="{{ ticks }}" as="t" hint-placeholder-count="0"><line x1="{{ t.x1 }}" y1="{{ t.y1 }}" x2="{{ t.x2 }}" y2="{{ t.y2 }}" stroke="{{ t.c }}" stroke-width="{{ t.w }}" stroke-linecap="round"></line></sc-for>
+<circle cx="100" cy="100" r="84" fill="none" stroke="{{ track }}" stroke-width="{{ th }}" stroke-linecap="round" stroke-dasharray="{{ dashTrack }}" transform="rotate(135 100 100)"></circle>
+<circle cx="100" cy="100" r="84" fill="none" stroke="{{ color }}" stroke-width="{{ glowW }}" stroke-linecap="round" stroke-dasharray="{{ dashVal }}" transform="rotate(135 100 100)" opacity="{{ glowOp }}" filter="url(#{{ fid }})"></circle>
+<circle cx="100" cy="100" r="84" fill="none" stroke="{{ color }}" stroke-width="{{ th }}" stroke-linecap="round" stroke-dasharray="{{ dashVal }}" transform="rotate(135 100 100)" opacity="{{ valOp }}"></circle>
+<circle cx="{{ dotX }}" cy="{{ dotY }}" r="{{ dotR }}" fill="#FFF4DE" opacity="{{ valOp }}"></circle>
+</svg>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:{{ gap }}px;text-align:center;font-family:Geist,system-ui,sans-serif;padding-top:{{ padTop }}px">
+<sc-if value="{{ hasLabel }}" hint-placeholder-val="{{ false }}"><div style="font-size:{{ labelSize }}px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted,#9A968F);font-weight:500">{{ label }}</div></sc-if>
+<div style="font-size:{{ numSize }}px;font-weight:300;color:{{ numColor }};font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1;white-space:nowrap">{{ display }}</div>
+<sc-if value="{{ hasSub }}" hint-placeholder-val="{{ false }}"><div style="font-size:{{ subSize }}px;color:{{ subColor }};font-variant-numeric:tabular-nums;white-space:nowrap">{{ sub }}</div></sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:260,&quot;height&quot;:260},&quot;pct&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.01,&quot;default&quot;:0.62,&quot;tsType&quot;:&quot;number&quot;},&quot;size&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:220,&quot;tsType&quot;:&quot;number&quot;},&quot;thickness&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;tsType&quot;:&quot;number&quot;},&quot;color&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D4A24C&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;num&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1240000,&quot;tsType&quot;:&quot;number&quot;},&quot;prefix&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;suffix&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;text&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Net worth&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sub&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;subColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9A968F&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;numSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:36,&quot;tsType&quot;:&quot;number&quot;},&quot;ticks&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { p: 0 };
+  componentDidMount() {
+    const dur = Number(this.props.duration ?? 1600), delay = Number(this.props.delay ?? 150);
+    const t0 = performance.now() + delay;
+    const step = (t) => {
+      const k = Math.min(1, Math.max(0, (t - t0) / dur));
+      this.setState({ p: 1 - Math.pow(1 - k, 3) });
+      if (k < 1) this.raf = requestAnimationFrame(step);
+    };
+    this.raf = requestAnimationFrame(step);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const P = this.props;
+    if (!this.fid) this.fid = 'g' + Math.random().toString(36).slice(2, 8);
+    const pct = Math.max(0, Math.min(1, Number(P.pct ?? 0.6)));
+    const p = this.state.p, cur = pct * p;
+    const size = Number(P.size ?? 220), th = Number(P.thickness ?? 8);
+    const color = P.color ?? '#D4A24C';
+    const r = 84, C = 2 * Math.PI * r, A = C * 0.75;
+    const ticks = [];
+    if (P.ticks !== 'false' && P.ticks !== false) {
+      const n = 36;
+      for (let i = 0; i <= n; i++) {
+        const a = (135 + 270 * i / n) * Math.PI / 180, major = i % 6 === 0;
+        const r1 = 93, r2 = major ? 99 : 96, lit = i / n <= cur + 0.001 && cur > 0.002;
+        ticks.push({ x1: 100 + r1 * Math.cos(a), y1: 100 + r1 * Math.sin(a), x2: 100 + r2 * Math.cos(a), y2: 100 + r2 * Math.sin(a),
+          c: lit ? (major ? color : color + '88') : (major ? '#44474C' : '#2A2D31'), w: major ? 1.6 : 1 });
+      }
+    }
+    const ea = (135 + 270 * cur) * Math.PI / 180;
+    const dec = Number(P.decimals ?? 0);
+    let display = P.text ?? '';
+    if (P.num != null && P.num !== '') {
+      const v = Number(P.num) * p;
+      display = (P.prefix ?? '') + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + (P.suffix ?? '');
+    }
+    const on = cur > 0.002 ? 1 : 0;
+    return {
+      size, th, color, fid: this.fid, ticks, track: P.track ?? '#202327',
+      dashTrack: `${A} ${C}`, dashVal: `${A * cur} ${C}`,
+      glowW: th * 2.2, glowOp: P.glow === 'false' ? 0 : 0.35 * on, valOp: on,
+      dotX: 100 + r * Math.cos(ea), dotY: 100 + r * Math.sin(ea), dotR: th * 0.32,
+      display, label: P.label ?? '', hasLabel: !!P.label, sub: P.sub ?? '', hasSub: !!P.sub,
+      numSize: Number(P.numSize ?? Math.round(size * 0.16)), labelSize: Number(P.labelSize ?? 12), subSize: Number(P.subSize ?? 14),
+      numColor: P.numColor ?? 'var(--text,#EDEAE4)', subColor: P.subColor ?? 'var(--muted,#9A968F)', gap: Number(P.gap ?? 10), padTop: Number(P.padTop ?? 6)
+    };
+  }
+}
+</script>
+</body>
+</html>

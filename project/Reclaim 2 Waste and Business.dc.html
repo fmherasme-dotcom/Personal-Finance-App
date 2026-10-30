@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--amber,#D4A24C);text-decoration:none}a:hover{color:var(--text,#EDEAE4)}button{font-family:inherit;cursor:pointer}</style>
+<style>html[data-theme=light]{--track:#ECE8E1;--canvas:#E8E5DF;--bg:#F7F5F1;--s1:#FFFFFF;--s2:#F0EDE7;--line:#E2DED6;--ring:#D9D5CD;--rule:#DEDAD2;--dash:#C9C4BA;--dash2:#A8A298;--tick:#BDB7AD;--text:#1B1A17;--muted:#6A665E;--muted2:#76726A;--faint:#8C877E;--amber:#B07D28;--green:#2B8A60;--orange:#C25A24;--red:#C23E3A;--red2:#C23E3A;--tabbg:rgba(247,245,241,.94)}html[data-theme=light] body{background:#E8E5DF;color:#1B1A17}html[data-theme=light] [stroke="#202327"]{stroke:#ECE8E1}html[data-theme=light] [fill="#202327"]{fill:#ECE8E1}html[data-theme=light] [stop-color="#202327"]{stop-color:#ECE8E1}html[data-theme=light] [stroke="#08090A"]{stroke:#E8E5DF}html[data-theme=light] [fill="#08090A"]{fill:#E8E5DF}html[data-theme=light] [stop-color="#08090A"]{stop-color:#E8E5DF}html[data-theme=light] [stroke="#0E0F11"]{stroke:#F7F5F1}html[data-theme=light] [fill="#0E0F11"]{fill:#F7F5F1}html[data-theme=light] [stop-color="#0E0F11"]{stop-color:#F7F5F1}html[data-theme=light] [stroke="#17191C"]{stroke:#FFFFFF}html[data-theme=light] [fill="#17191C"]{fill:#FFFFFF}html[data-theme=light] [stop-color="#17191C"]{stop-color:#FFFFFF}html[data-theme=light] [stroke="#1F2226"]{stroke:#F0EDE7}html[data-theme=light] [fill="#1F2226"]{fill:#F0EDE7}html[data-theme=light] [stop-color="#1F2226"]{stop-color:#F0EDE7}html[data-theme=light] [stroke="#2A2D31"]{stroke:#E2DED6}html[data-theme=light] [fill="#2A2D31"]{fill:#E2DED6}html[data-theme=light] [stop-color="#2A2D31"]{stop-color:#E2DED6}html[data-theme=light] [stroke="#24272B"]{stroke:#D9D5CD}html[data-theme=light] [fill="#24272B"]{fill:#D9D5CD}html[data-theme=light] [stop-color="#24272B"]{stop-color:#D9D5CD}html[data-theme=light] [stroke="#1E2023"]{stroke:#DEDAD2}html[data-theme=light] [fill="#1E2023"]{fill:#DEDAD2}html[data-theme=light] [stop-color="#1E2023"]{stop-color:#DEDAD2}html[data-theme=light] [stroke="#3A3D42"]{stroke:#C9C4BA}html[data-theme=light] [fill="#3A3D42"]{fill:#C9C4BA}html[data-theme=light] [stop-color="#3A3D42"]{stop-color:#C9C4BA}html[data-theme=light] [stroke="#5A5650"]{stroke:#A8A298}html[data-theme=light] [fill="#5A5650"]{fill:#A8A298}html[data-theme=light] [stop-color="#5A5650"]{stop-color:#A8A298}html[data-theme=light] [stroke="#44474C"]{stroke:#BDB7AD}html[data-theme=light] [fill="#44474C"]{fill:#BDB7AD}html[data-theme=light] [stop-color="#44474C"]{stop-color:#BDB7AD}html[data-theme=light] [stroke="#EDEAE4"]{stroke:#1B1A17}html[data-theme=light] [fill="#EDEAE4"]{fill:#1B1A17}html[data-theme=light] [stop-color="#EDEAE4"]{stop-color:#1B1A17}html[data-theme=light] [stroke="#9A968F"]{stroke:#6A665E}html[data-theme=light] [fill="#9A968F"]{fill:#6A665E}html[data-theme=light] [stop-color="#9A968F"]{stop-color:#6A665E}html[data-theme=light] [stroke="#8A867F"]{stroke:#76726A}html[data-theme=light] [fill="#8A867F"]{fill:#76726A}html[data-theme=light] [stop-color="#8A867F"]{stop-color:#76726A}html[data-theme=light] [stroke="#6E6A64"]{stroke:#8C877E}html[data-theme=light] [fill="#6E6A64"]{fill:#8C877E}html[data-theme=light] [stop-color="#6E6A64"]{stop-color:#8C877E}html[data-theme=light] [stroke="#D4A24C"]{stroke:#B07D28}html[data-theme=light] [fill="#D4A24C"]{fill:#B07D28}html[data-theme=light] [stop-color="#D4A24C"]{stop-color:#B07D28}html[data-theme=light] [stroke="#3FA37A"]{stroke:#2B8A60}html[data-theme=light] [fill="#3FA37A"]{fill:#2B8A60}html[data-theme=light] [stop-color="#3FA37A"]{stop-color:#2B8A60}html[data-theme=light] [stroke="#E0703A"]{stroke:#C25A24}html[data-theme=light] [fill="#E0703A"]{fill:#C25A24}html[data-theme=light] [stop-color="#E0703A"]{stop-color:#C25A24}html[data-theme=light] [stroke="#D9534F"]{stroke:#C23E3A}html[data-theme=light] [fill="#D9534F"]{fill:#C23E3A}html[data-theme=light] [stop-color="#D9534F"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#E8807C"]{stroke:#C23E3A}html[data-theme=light] [fill="#E8807C"]{fill:#C23E3A}html[data-theme=light] [stop-color="#E8807C"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#D4A24C88"]{stroke:#B07D2888}html[data-theme=light] [stroke="#E0703A88"]{stroke:#C25A2488}html[data-theme=light] [stroke="#3FA37A88"]{stroke:#2B8A6088}</style>
+<script src="theme.js"></script>
+</helmet>
+<div style="padding:72px 80px 120px;width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:80px;margin-bottom:72px;padding-bottom:28px;border-bottom:1px solid var(--rule,#1E2023)">
+<div><div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.16em;color:var(--amber,#D4A24C)">RECLAIM · HIGH-FIDELITY</div><div style="font-size:44px;letter-spacing:-.02em;margin-top:10px">Waste Finder &amp; Business</div></div>
+<nav style="display:flex;gap:28px;font-size:15px"><a href="Reclaim%200%20Design%20System.dc.html">Design system</a><a href="Reclaim%201%20Onboarding%20and%20Home.dc.html">Onboarding &amp; Home</a><span>Waste &amp; Business</span><a href="Reclaim%203%20Net%20Worth%20and%20Retirement.dc.html">Net Worth &amp; Retirement</a><a href="Reclaim%204%20Bills%20Coach%20Entry%20Settings.dc.html">Bills, Coach, Entry, Settings</a><button onClick="{{ toggleTheme }}" style="height:40px;padding:0 16px;border-radius:20px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);font-size:14px;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg>{{ themeLabel }}</button></nav>
+</div>
+
+<section style="margin-bottom:120px">
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">C</span><span style="font-size:26px">Waste Finder</span><span style="color:var(--muted,#9A968F);font-size:15px">Filters, Reclaim, Snooze and Mark as Necessary are live in C1</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">C1 · Waste Finder (full scroll)</div>
+<div data-screen-label="C1 Waste Finder" style="width:390px;height:{{ finderH }}px;min-height:900px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:10px 20px 0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:28px;letter-spacing:-.02em">Waste Finder</div><div style="text-align:right"><div style="font-size:11px;letter-spacing:.12em;color:var(--muted,#9A968F)">RECLAIMED THIS YEAR</div><div style="font-size:17px;color:var(--green,#3FA37A);font-variant-numeric:tabular-nums;margin-top:2px">{{ reclaimedTotal }}</div></div></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:22px 18px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 60px rgba(212,162,76,.05)">
+<div style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">POTENTIAL SAVINGS</div>
+<div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><span style="font-size:58px;font-weight:300;letter-spacing:-.03em;color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums;line-height:1">{{ potMo }}</span><span style="font-size:18px;color:var(--muted,#9A968F)">/mo</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line,#2A2D31)">
+<div><div style="font-size:13px;color:var(--muted,#9A968F)">Per year</div><div style="font-size:20px;font-weight:300;margin-top:4px;font-variant-numeric:tabular-nums">{{ potYr }}</div></div>
+<div><div style="font-size:13px;color:var(--muted,#9A968F)">In 5 yrs if invested</div><div style="font-size:20px;font-weight:300;margin-top:4px;color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums">{{ pot5 }}</div></div></div>
+<div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;margin-top:18px"><div style="flex:497;background:var(--text,#EDEAE4);opacity:.75"></div><div style="flex:245;background:var(--amber,#D4A24C)"></div><div style="flex:574;background:var(--orange,#E0703A)"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted,#9A968F);margin-top:8px;font-variant-numeric:tabular-nums"><span>Personal $497</span><span>Biz A $245</span><span>Biz B $574</span></div>
+</div>
+<div style="display:flex;gap:8px;overflow:hidden">
+<sc-for list="{{ chips }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.onClick }}" style="height:36px;padding:0 14px;border-radius:18px;font-size:14px;white-space:nowrap;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }}">{{ c.label }} <span style="opacity:.6">{{ c.count }}</span></button></sc-for>
+</div>
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 4px 2px"><span style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">{{ g.title }}</span><span style="font-size:13px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums">{{ g.total }}</span></div>
+<sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2">
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<sc-if value="{{ it.open }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start"><div style="min-width:0"><div style="font-size:16px;font-weight:500">{{ it.name }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:3px;line-height:1.4">{{ it.why }}</div></div><span style="flex:none;font-size:11px;font-weight:500;padding:4px 9px;border-radius:99px;border:1px solid var(--line,#2A2D31);color:var(--muted,#9A968F);white-space:nowrap">{{ it.src }}</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;font-variant-numeric:tabular-nums">
+<div><div style="font-size:12px;color:var(--muted,#9A968F)">Monthly</div><div style="font-size:17px;color:var(--orange,#E0703A);margin-top:3px">{{ it.moT }}</div></div>
+<div><div style="font-size:12px;color:var(--muted,#9A968F)">Annual</div><div style="font-size:17px;margin-top:3px">{{ it.yrT }}</div></div>
+<div><div style="font-size:12px;color:var(--muted,#9A968F)">5 yrs invested</div><div style="font-size:17px;color:var(--amber,#D4A24C);margin-top:3px">{{ it.fiveT }}</div></div></div>
+<div style="display:flex;gap:8px;margin-top:14px">
+<button onClick="{{ it.onReclaim }}" style="flex:1;height:40px;border-radius:11px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:14px;font-weight:600">Reclaim</button>
+<button onClick="{{ it.onSnooze }}" style="height:40px;padding:0 14px;border-radius:11px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--text,#EDEAE4);font-size:14px">Snooze</button>
+<button onClick="{{ it.onKeep }}" style="height:40px;padding:0 14px;border-radius:11px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--text,#EDEAE4);font-size:14px">Necessary</button></div>
+</sc-if>
+<sc-if value="{{ it.done }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:12px"><div style="flex:1;min-width:0"><div style="font-size:15px">{{ it.name }}</div><div style="font-size:13px;margin-top:3px;color:{{ it.doneColor }}">{{ it.doneText }}</div></div><button onClick="{{ it.onUndo }}" style="height:32px;padding:0 12px;border-radius:9px;border:none;background:transparent;color:var(--muted,#9A968F);font-size:14px">Undo</button></div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</sc-for>
+<div style="font-size:13px;color:var(--muted,#9A968F);text-align:center;padding:8px 20px 0;line-height:1.45">5-year figures assume the monthly amount is invested at 7% a year.</div>
+</div>
+<dc-import name="TabBar" active="waste" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">C2 · Reclaim sheet</div>
+<div data-screen-label="C2 Reclaim sheet" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:10px 20px;display:flex;flex-direction:column;gap:12px;opacity:.35"><div style="font-size:28px">Waste Finder</div><div style="height:180px;border-radius:20px;background:var(--s1,#17191C)"></div><div style="height:150px;border-radius:18px;background:var(--s1,#17191C)"></div></div>
+<div style="position:absolute;inset:0;background:rgba(5,5,6,.55)"></div>
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;background:var(--s1,#17191C);border-radius:28px 28px 0 0;padding:10px 20px 40px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 -20px 60px rgba(0,0,0,.5)">
+<div style="width:40px;height:5px;border-radius:3px;background:var(--dash,#3A3D42);margin:0 auto 18px"></div>
+<div style="font-size:12px;letter-spacing:.14em;color:var(--amber,#D4A24C);font-weight:500">RECLAIM</div>
+<div style="font-size:24px;margin-top:6px;letter-spacing:-.01em">Summit Athletic Club</div>
+<div style="font-size:15px;color:var(--muted,#9A968F);margin-top:4px;font-variant-numeric:tabular-nums">$89/mo · $1,068/yr · no check-ins in 74 days</div>
+<div style="font-size:14px;color:var(--muted,#9A968F);margin:20px 0 10px">Cancel it, then send $89 each month to</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;background:var(--bg,#0E0F11);border:1px solid var(--line,#2A2D31)"><div style="width:20px;height:20px;border-radius:10px;border:1.5px solid var(--dash2,#5A5650)"></div><div style="flex:1"><div style="font-size:16px">Move to Savings</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">High-yield savings ··2290 · 4.3% APY</div></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;background:rgba(212,162,76,.08);border:1px solid var(--amber,#D4A24C)"><div style="width:20px;height:20px;border-radius:10px;border:1.5px solid var(--amber,#D4A24C);display:flex;align-items:center;justify-content:center"><div style="width:10px;height:10px;border-radius:5px;background:var(--amber,#D4A24C)"></div></div><div style="flex:1"><div style="font-size:16px">Move to Investments</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Brokerage ··8812</div></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;background:var(--bg,#0E0F11);border:1px solid var(--line,#2A2D31)"><div style="width:20px;height:20px;border-radius:10px;border:1.5px solid var(--dash2,#5A5650)"></div><div style="flex:1"><div style="font-size:16px">Apply to Retirement Goal</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Semi-retirement fund · 62% funded</div></div></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;padding-top:16px;border-top:1px solid var(--line,#2A2D31)"><span style="font-size:15px;color:var(--muted,#9A968F)">Worth in 5 years at 7%</span><span style="font-size:28px;font-weight:300;color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums">$6,372</span></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:8px;line-height:1.45">Reclaim logs the redirect and reminds you to set up the transfer. It doesn't move money on its own.</div>
+<button style="width:100%;height:56px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600;margin-top:18px">Reclaim $89/mo</button>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">C3 · Waste Finder, empty state</div>
+<div data-screen-label="C3 Waste empty" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:10px 20px 0"><div style="font-size:28px;letter-spacing:-.02em">Waste Finder</div></div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:70px 34px 0">
+<dc-import name="Gauge" pct="0" size="200" thickness="6" text="$0" num-size="40" label="Potential" sub="nothing flagged yet" hint-size="200px,200px"></dc-import>
+<div style="font-size:22px;margin-top:28px">No leaks found yet</div>
+<div style="font-size:15px;color:var(--muted,#9A968F);margin-top:10px;line-height:1.5;text-wrap:pretty">Add a few weeks of transactions and your recurring bills. Reclaim will flag unused subscriptions, fees, duplicates and over-budget categories here.</div>
+<div style="display:flex;flex-direction:column;gap:10px;width:100%;margin-top:30px">
+<button style="height:52px;border-radius:14px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:16px;font-weight:600">Add a transaction</button>
+<button style="height:52px;border-radius:14px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--text,#EDEAE4);font-size:16px">Add recurring bills</button></div>
+</div>
+<dc-import name="TabBar" active="waste" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+</div>
+
+</div></section>
+
+<section style="margin-bottom:120px">
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">D</span><span style="font-size:26px">Business Money View</span><span style="color:var(--muted,#9A968F);font-size:15px">Reached from Home and the profile menu</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">D1 · Business (full scroll)</div>
+<div data-screen-label="D1 Business" style="width:390px;height:1780px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:4px 20px 0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:6px;height:40px;color:var(--amber,#D4A24C);font-size:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>Home</div>
+<div><div style="font-size:28px;letter-spacing:-.02em">Business money</div><div style="font-size:15px;color:var(--muted,#9A968F);margin-top:4px">What you took home, and what leaked inside.</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">BUSINESS A</div><div style="font-size:16px;margin-top:3px">Restoration</div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:16px">Draws this week</div><div style="font-size:28px;font-weight:300;margin-top:2px;font-variant-numeric:tabular-nums">$3,500</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line,#2A2D31);font-size:14px;font-variant-numeric:tabular-nums"><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Month</span><span>$15,200</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">YTD</span><span>$148,600</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Wasted</span><span style="color:var(--orange,#E0703A)">$245/mo</span></div></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">BUSINESS B</div><div style="font-size:16px;margin-top:3px">Cigar Brand</div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:16px">Draws this week</div><div style="font-size:28px;font-weight:300;margin-top:2px;font-variant-numeric:tabular-nums">$1,200</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line,#2A2D31);font-size:14px;font-variant-numeric:tabular-nums"><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Month</span><span>$5,200</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">YTD</span><span>$51,800</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Wasted</span><span style="color:var(--orange,#E0703A)">$574/mo</span></div></div>
+</div></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="font-size:18px">Taken home vs. wasted inside</div><div style="font-size:14px;color:var(--muted,#9A968F);margin-top:4px">October</div>
+<div style="display:flex;flex-direction:column;gap:18px;margin-top:18px">
+<div><div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>Restoration</span><span style="color:var(--muted,#9A968F)">1.6¢ wasted per $1 taken home</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:10px;border-radius:5px;background:var(--green,#3FA37A);width:100%"></div><div style="height:10px;border-radius:5px;background:var(--orange,#E0703A);width:2%"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;margin-top:6px;font-variant-numeric:tabular-nums"><span style="color:var(--green,#3FA37A)">$15,200 home</span><span style="color:var(--orange,#E0703A)">$245 wasted</span></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>Cigar Brand</span><span style="color:var(--orange,#E0703A)">11¢ wasted per $1 taken home</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="height:10px;border-radius:5px;background:var(--green,#3FA37A);width:34%"></div><div style="height:10px;border-radius:5px;background:var(--orange,#E0703A);width:3.8%"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;margin-top:6px;font-variant-numeric:tabular-nums"><span style="color:var(--green,#3FA37A)">$5,200 home</span><span style="color:var(--orange,#E0703A)">$574 wasted</span></div></div>
+</div></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:18px">Owner draws · 12 months</span></div>
+<div style="display:flex;gap:16px;font-size:13px;color:var(--muted,#9A968F);margin-top:8px"><span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:2px;background:var(--amber,#D4A24C)"></span>Restoration</span><span style="display:flex;align-items:center;gap:6px"><span style="width:14px;height:2px;background:var(--text,#EDEAE4);opacity:.7"></span>Cigar Brand</span></div>
+<div style="position:relative;margin-top:14px">
+<svg viewBox="0 0 318 160" width="318" height="160" style="display:block;overflow:visible">
+<line x1="0" y1="10" x2="318" y2="10" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="60" x2="318" y2="60" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="110" x2="318" y2="110" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="150" x2="318" y2="150" stroke="#2A2D31"></line>
+<polyline points="{{ ptsA }}" fill="none" stroke="#D4A24C" stroke-width="2" stroke-linejoin="round"></polyline>
+<polyline points="{{ ptsB }}" fill="none" stroke="#EDEAE4" stroke-opacity=".7" stroke-width="1.5" stroke-linejoin="round"></polyline>
+<circle cx="318" cy="{{ lastA }}" r="3.5" fill="#D4A24C"></circle>
+</svg>
+<div style="position:absolute;right:0;top:-2px;font-size:12px;color:var(--muted,#9A968F)">$16K</div><div style="position:absolute;right:0;top:98px;font-size:12px;color:var(--muted,#9A968F)">$5K</div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted,#9A968F);margin-top:8px"><span>N</span><span>D</span><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 4px 0"><span style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">WASTE INSIDE THE BUSINESSES</span><span style="font-size:13px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$819/mo</span></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:6px 16px">
+<div style="font-size:13px;color:var(--amber,#D4A24C);padding:12px 0 4px">Restoration</div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1"><div style="font-size:15px">Second equipment rental vendor</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Redundant vendor</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$180</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1"><div style="font-size:15px">Fieldline Pro seat</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Unused software · 60 days</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$65</span></div>
+<div style="font-size:13px;color:var(--amber,#D4A24C);padding:16px 0 4px;border-top:1px solid var(--line,#2A2D31)">Cigar Brand</div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1"><div style="font-size:15px">Paid social ads</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Returned ~$140 margin on $400</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$400</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1"><div style="font-size:15px">Merchant processing</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Excess fees · 3.4% vs 2.6%</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$95</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1"><div style="font-size:15px">CRM seats</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Underused · 3 of 5 inactive</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$79</span></div>
+</div>
+<button style="height:52px;border-radius:14px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:16px;font-weight:600">Review business waste</button>
+</div>
+<dc-import name="TabBar" active="home" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+</div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._th = () => this.forceUpdate(); window.addEventListener('reclaim-theme', this._th); }
+  componentWillUnmount() { window.removeEventListener('reclaim-theme', this._th); }
+  renderVals() {
+    const light = !!(window.reclaimTheme && window.reclaimTheme() === 'light');
+    const set = t => window.reclaimSetTheme && window.reclaimSetTheme(t);
+    return { ...(this._rv ? this._rv() : {}), toggleTheme: () => window.reclaimToggleTheme && window.reclaimToggleTheme(), themeLabel: light ? 'Dark mode' : 'Light mode',
+      setDark: () => set('dark'), setLight: () => set('light'),
+      darkBg: light ? 'transparent' : 'var(--line,#2A2D31)', darkC: light ? 'var(--muted,#9A968F)' : 'var(--text,#EDEAE4)', lightBg: light ? 'var(--line,#2A2D31)' : 'transparent', lightC: light ? 'var(--text,#EDEAE4)' : 'var(--muted,#9A968F)' };
+  }
+
+  state = { filter: 'All', status: {} };
+  _rv() {
+    const F = 71.59;
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+    const items = [
+      { id: 'gym', g: 'Subscriptions', name: 'Summit Athletic Club', why: 'No check-ins in 74 days', src: 'Personal', mo: 89 },
+      { id: 'stream', g: 'Duplicate Services', name: 'Three streaming services', why: 'Reelhouse, Northlight TV and Vista+ overlap', src: 'Personal', mo: 47 },
+      { id: 'cloud', g: 'Duplicate Services', name: 'Second cloud storage plan', why: 'CloudVault and DriveBox, both 2 TB', src: 'Personal', mo: 20 },
+      { id: 'late', g: 'Fees & Interest', name: 'Credit card late fee', why: 'Platinum card, paid 3 days late', src: 'Personal', mo: 39 },
+      { id: 'int', g: 'Fees & Interest', name: 'Carried card interest', why: '$4,600 balance at 23.9% APR', src: 'Personal', mo: 90 },
+      { id: 'merch', g: 'Fees & Interest', name: 'Merchant processing above rate', why: '3.4% vs. 2.6% market rate', src: 'Business B', mo: 95 },
+      { id: 'dining', g: 'Over-budget Categories', name: 'Dining out', why: '$812 spent of a $600 budget', src: 'Personal', mo: 212 },
+      { id: 'vendor', g: 'Business Waste', name: 'Second equipment rental vendor', why: 'Same equipment as your primary vendor', src: 'Business A', mo: 180 },
+      { id: 'seat', g: 'Business Waste', name: 'Unused project software seat', why: 'Fieldline Pro, no login in 60 days', src: 'Business A', mo: 65 },
+      { id: 'ads', g: 'Business Waste', name: 'Paid social ads', why: '$400 spent, about $140 margin returned', src: 'Business B', mo: 400 },
+      { id: 'crm', g: 'Business Waste', name: 'Unused CRM seats', why: '3 of 5 seats inactive', src: 'Business B', mo: 79 }
+    ];
+    const { filter, status } = this.state;
+    const set = (id, v) => this.setState(s => ({ status: { ...s.status, [id]: v } }));
+    const vis = items.filter(i => filter === 'All' || i.src === filter);
+    const order = ['Subscriptions', 'Fees & Interest', 'Over-budget Categories', 'Duplicate Services', 'Business Waste'];
+    const groups = order.map(t => {
+      const its = vis.filter(i => i.g === t);
+      if (!its.length) return null;
+      const openTotal = its.filter(i => !status[i.id]).reduce((a, i) => a + i.mo, 0);
+      return {
+        title: t.toUpperCase(), total: fmt(openTotal) + '/mo',
+        items: its.map(i => {
+          const st = status[i.id];
+          return {
+            ...i, open: !st, done: !!st, moT: fmt(i.mo), yrT: fmt(i.mo * 12), fiveT: fmt(i.mo * F),
+            doneText: st === 'reclaimed' ? `Reclaimed · ${fmt(i.mo)}/mo to Investments` : st === 'snoozed' ? 'Snoozed for 30 days' : 'Marked as necessary',
+            doneColor: st === 'reclaimed' ? 'var(--green,#3FA37A)' : 'var(--muted,#9A968F)',
+            onReclaim: () => set(i.id, 'reclaimed'), onSnooze: () => set(i.id, 'snoozed'), onKeep: () => set(i.id, 'kept'), onUndo: () => set(i.id, null)
+          };
+        })
+      };
+    }).filter(Boolean);
+    const open = items.filter(i => !status[i.id]).reduce((a, i) => a + i.mo, 0);
+    const rec = items.filter(i => status[i.id] === 'reclaimed').reduce((a, i) => a + i.mo, 0);
+    const chips = ['All', 'Personal', 'Business A', 'Business B'].map(k => {
+      const on = k === filter;
+      return { label: k, count: items.filter(i => k === 'All' || i.src === k).length, onClick: () => this.setState({ filter: k }),
+        bg: on ? 'rgba(212,162,76,.14)' : 'var(--s1,#17191C)', border: on ? 'var(--amber,#D4A24C)' : 'var(--line,#2A2D31)', color: on ? 'var(--amber,#D4A24C)' : 'var(--text,#EDEAE4)' };
+    });
+    const nItems = vis.length, nGroups = groups.length;
+    const A = [14.2, 13.8, 12.6, 13.1, 14.0, 14.9, 15.4, 15.8, 16.1, 15.0, 14.6, 15.2];
+    const B = [4.1, 4.6, 5.8, 4.2, 3.9, 4.4, 4.8, 5.0, 5.3, 4.9, 5.6, 5.2];
+    const y = v => 150 - ((v - 2) / 15) * 150;
+    const pts = arr => arr.map((v, i) => `${(i / 11) * 318},${y(v).toFixed(1)}`).join(' ');
+    return {
+      chips, groups, potMo: fmt(open), potYr: fmt(open * 12), pot5: fmt(open * F), reclaimedTotal: fmt(8420 + rec),
+      finderH: 840 + nItems * 214 + nGroups * 44, ptsA: pts(A), ptsB: pts(B), lastA: y(A[11])
+    };
+  }
+}
+</script>
+</body>
+</html>

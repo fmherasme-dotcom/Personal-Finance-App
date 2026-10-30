@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--amber,#D4A24C);text-decoration:none}a:hover{color:var(--text,#EDEAE4)}button{font-family:inherit;cursor:pointer}input[type=range]{accent-color:var(--amber,#D4A24C)}</style>
+<style>html[data-theme=light]{--track:#ECE8E1;--canvas:#E8E5DF;--bg:#F7F5F1;--s1:#FFFFFF;--s2:#F0EDE7;--line:#E2DED6;--ring:#D9D5CD;--rule:#DEDAD2;--dash:#C9C4BA;--dash2:#A8A298;--tick:#BDB7AD;--text:#1B1A17;--muted:#6A665E;--muted2:#76726A;--faint:#8C877E;--amber:#B07D28;--green:#2B8A60;--orange:#C25A24;--red:#C23E3A;--red2:#C23E3A;--tabbg:rgba(247,245,241,.94)}html[data-theme=light] body{background:#E8E5DF;color:#1B1A17}html[data-theme=light] [stroke="#202327"]{stroke:#ECE8E1}html[data-theme=light] [fill="#202327"]{fill:#ECE8E1}html[data-theme=light] [stop-color="#202327"]{stop-color:#ECE8E1}html[data-theme=light] [stroke="#08090A"]{stroke:#E8E5DF}html[data-theme=light] [fill="#08090A"]{fill:#E8E5DF}html[data-theme=light] [stop-color="#08090A"]{stop-color:#E8E5DF}html[data-theme=light] [stroke="#0E0F11"]{stroke:#F7F5F1}html[data-theme=light] [fill="#0E0F11"]{fill:#F7F5F1}html[data-theme=light] [stop-color="#0E0F11"]{stop-color:#F7F5F1}html[data-theme=light] [stroke="#17191C"]{stroke:#FFFFFF}html[data-theme=light] [fill="#17191C"]{fill:#FFFFFF}html[data-theme=light] [stop-color="#17191C"]{stop-color:#FFFFFF}html[data-theme=light] [stroke="#1F2226"]{stroke:#F0EDE7}html[data-theme=light] [fill="#1F2226"]{fill:#F0EDE7}html[data-theme=light] [stop-color="#1F2226"]{stop-color:#F0EDE7}html[data-theme=light] [stroke="#2A2D31"]{stroke:#E2DED6}html[data-theme=light] [fill="#2A2D31"]{fill:#E2DED6}html[data-theme=light] [stop-color="#2A2D31"]{stop-color:#E2DED6}html[data-theme=light] [stroke="#24272B"]{stroke:#D9D5CD}html[data-theme=light] [fill="#24272B"]{fill:#D9D5CD}html[data-theme=light] [stop-color="#24272B"]{stop-color:#D9D5CD}html[data-theme=light] [stroke="#1E2023"]{stroke:#DEDAD2}html[data-theme=light] [fill="#1E2023"]{fill:#DEDAD2}html[data-theme=light] [stop-color="#1E2023"]{stop-color:#DEDAD2}html[data-theme=light] [stroke="#3A3D42"]{stroke:#C9C4BA}html[data-theme=light] [fill="#3A3D42"]{fill:#C9C4BA}html[data-theme=light] [stop-color="#3A3D42"]{stop-color:#C9C4BA}html[data-theme=light] [stroke="#5A5650"]{stroke:#A8A298}html[data-theme=light] [fill="#5A5650"]{fill:#A8A298}html[data-theme=light] [stop-color="#5A5650"]{stop-color:#A8A298}html[data-theme=light] [stroke="#44474C"]{stroke:#BDB7AD}html[data-theme=light] [fill="#44474C"]{fill:#BDB7AD}html[data-theme=light] [stop-color="#44474C"]{stop-color:#BDB7AD}html[data-theme=light] [stroke="#EDEAE4"]{stroke:#1B1A17}html[data-theme=light] [fill="#EDEAE4"]{fill:#1B1A17}html[data-theme=light] [stop-color="#EDEAE4"]{stop-color:#1B1A17}html[data-theme=light] [stroke="#9A968F"]{stroke:#6A665E}html[data-theme=light] [fill="#9A968F"]{fill:#6A665E}html[data-theme=light] [stop-color="#9A968F"]{stop-color:#6A665E}html[data-theme=light] [stroke="#8A867F"]{stroke:#76726A}html[data-theme=light] [fill="#8A867F"]{fill:#76726A}html[data-theme=light] [stop-color="#8A867F"]{stop-color:#76726A}html[data-theme=light] [stroke="#6E6A64"]{stroke:#8C877E}html[data-theme=light] [fill="#6E6A64"]{fill:#8C877E}html[data-theme=light] [stop-color="#6E6A64"]{stop-color:#8C877E}html[data-theme=light] [stroke="#D4A24C"]{stroke:#B07D28}html[data-theme=light] [fill="#D4A24C"]{fill:#B07D28}html[data-theme=light] [stop-color="#D4A24C"]{stop-color:#B07D28}html[data-theme=light] [stroke="#3FA37A"]{stroke:#2B8A60}html[data-theme=light] [fill="#3FA37A"]{fill:#2B8A60}html[data-theme=light] [stop-color="#3FA37A"]{stop-color:#2B8A60}html[data-theme=light] [stroke="#E0703A"]{stroke:#C25A24}html[data-theme=light] [fill="#E0703A"]{fill:#C25A24}html[data-theme=light] [stop-color="#E0703A"]{stop-color:#C25A24}html[data-theme=light] [stroke="#D9534F"]{stroke:#C23E3A}html[data-theme=light] [fill="#D9534F"]{fill:#C23E3A}html[data-theme=light] [stop-color="#D9534F"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#E8807C"]{stroke:#C23E3A}html[data-theme=light] [fill="#E8807C"]{fill:#C23E3A}html[data-theme=light] [stop-color="#E8807C"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#D4A24C88"]{stroke:#B07D2888}html[data-theme=light] [stroke="#E0703A88"]{stroke:#C25A2488}html[data-theme=light] [stroke="#3FA37A88"]{stroke:#2B8A6088}</style>
+<script src="theme.js"></script>
+</helmet>
+<div style="padding:72px 80px 120px;width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:80px;margin-bottom:72px;padding-bottom:28px;border-bottom:1px solid var(--rule,#1E2023)">
+<div><div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.16em;color:var(--amber,#D4A24C)">RECLAIM · HIGH-FIDELITY</div><div style="font-size:44px;letter-spacing:-.02em;margin-top:10px">Net Worth, Retirement &amp; Budget</div></div>
+<nav style="display:flex;gap:28px;font-size:15px"><a href="Reclaim%200%20Design%20System.dc.html">Design system</a><a href="Reclaim%201%20Onboarding%20and%20Home.dc.html">Onboarding &amp; Home</a><a href="Reclaim%202%20Waste%20and%20Business.dc.html">Waste &amp; Business</a><span>Net Worth &amp; Retirement</span><a href="Reclaim%204%20Bills%20Coach%20Entry%20Settings.dc.html">Bills, Coach, Entry, Settings</a><button onClick="{{ toggleTheme }}" style="height:40px;padding:0 16px;border-radius:20px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);font-size:14px;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg>{{ themeLabel }}</button></nav>
+</div>
+<div style="display:flex;gap:120px;align-items:flex-start">
+
+<section>
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">E</span><span style="font-size:26px">Net Worth Tracker</span><span style="color:var(--muted,#9A968F);font-size:15px">Investments links to the stocks &amp; crypto tracker</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+<div style="display:flex;flex-direction:column;gap:14px" id="e1">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">E1 · Net Worth (full scroll)</div>
+<div data-screen-label="E1 Net Worth" style="width:390px;height:1980px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="position:absolute;top:60px;left:0;right:0;height:420px;background:radial-gradient(260px 220px at 50% 50%, rgba(212,162,76,.08), transparent 70%)"></div>
+<div style="position:relative;padding:10px 20px 0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:28px;letter-spacing:-.02em">Net Worth</div><span style="font-size:13px;color:var(--muted,#9A968F)">Household</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;padding:8px 0 4px">
+<dc-import name="Gauge" pct="0.62" size="310" thickness="7" num="1240000" prefix="$" num-size="44" label="Total net worth" sub="+$3,850 this week" sub-color="var(--green,#3FA37A)" sub-size="15" hint-size="310px,310px"></dc-import>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:-8px">62% of your $2M semi-retirement number</div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;justify-content:space-between;font-variant-numeric:tabular-nums"><div><div style="font-size:13px;color:var(--muted,#9A968F)">Assets</div><div style="font-size:22px;font-weight:300;margin-top:3px;color:var(--green,#3FA37A)">$2,008,000</div></div><div style="text-align:right"><div style="font-size:13px;color:var(--muted,#9A968F)">Liabilities</div><div style="font-size:22px;font-weight:300;margin-top:3px;color:var(--orange,#E0703A)">$768,000</div></div></div>
+<div style="display:flex;height:8px;gap:3px;margin-top:14px"><div style="flex:2008;border-radius:4px;background:var(--green,#3FA37A)"></div><div style="flex:768;border-radius:4px;background:var(--orange,#E0703A)"></div></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:18px">12-month trend</span><span style="font-size:14px;color:var(--green,#3FA37A);font-variant-numeric:tabular-nums">+$92,000</span></div>
+<svg viewBox="0 0 318 140" width="318" height="140" style="display:block;margin-top:16px;overflow:visible">
+<defs><linearGradient id="nwfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D4A24C" stop-opacity=".22"></stop><stop offset="1" stop-color="#D4A24C" stop-opacity="0"></stop></linearGradient></defs>
+<line x1="0" y1="35" x2="318" y2="35" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="85" x2="318" y2="85" stroke="#2A2D31" stroke-dasharray="2 4"></line><line x1="0" y1="135" x2="318" y2="135" stroke="#2A2D31"></line>
+<polygon points="{{ nwArea }}" fill="url(#nwfill)"></polygon>
+<polyline points="{{ nwPts }}" fill="none" stroke="#D4A24C" stroke-width="2" stroke-linejoin="round"></polyline>
+<circle cx="318" cy="{{ nwLast }}" r="4" fill="#D4A24C"></circle>
+</svg>
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted,#9A968F);margin-top:8px"><span>Nov '25</span><span>Feb</span><span>May</span><span>Aug</span><span>Oct '26</span></div>
+</div>
+<a href="#e2" style="display:flex;align-items:center;gap:12px;border-radius:18px;padding:16px;color:var(--text,#EDEAE4);background:linear-gradient(160deg,var(--s2,#1F2226),var(--s1,#17191C));box-shadow:inset 0 0 0 1px rgba(212,162,76,.28)"><div style="flex:1"><div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">STOCKS &amp; CRYPTO</div><div style="font-size:22px;font-weight:300;margin-top:6px;font-variant-numeric:tabular-nums">$312,000</div><div style="font-size:13px;color:var(--green,#3FA37A);margin-top:2px">+$2,940 this week · 9 holdings</div></div><span style="font-size:15px;color:var(--amber,#D4A24C)">Open ›</span></a>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 4px 0"><span style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">ASSETS</span><span style="font-size:13px;color:var(--muted,#9A968F)">Tap a value to update</span></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:4px 16px">
+<sc-for list="{{ assets }}" as="a" hint-placeholder-count="6">
+<div style="padding:14px 0;border-top:1px solid {{ a.line }}">
+<div style="display:flex;align-items:center;gap:12px"><div style="flex:1;min-width:0"><div style="font-size:15px">{{ a.name }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">{{ a.note }}</div></div><span style="font-size:16px;font-variant-numeric:tabular-nums">{{ a.valT }}</span><button style="height:30px;padding:0 10px;border-radius:8px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--amber,#D4A24C);font-size:13px">Update</button></div>
+<div style="height:3px;border-radius:2px;background:var(--track,#202327);margin-top:10px"><div style="height:3px;border-radius:2px;background:var(--green,#3FA37A);width:{{ a.w }}%"></div></div>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 4px 0"><span style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">LIABILITIES</span></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:4px 16px">
+<sc-for list="{{ liabs }}" as="a" hint-placeholder-count="4">
+<div style="padding:14px 0;border-top:1px solid {{ a.line }}">
+<div style="display:flex;align-items:center;gap:12px"><div style="flex:1;min-width:0"><div style="font-size:15px">{{ a.name }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">{{ a.note }}</div></div><span style="font-size:16px;font-variant-numeric:tabular-nums">{{ a.valT }}</span><button style="height:30px;padding:0 10px;border-radius:8px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--amber,#D4A24C);font-size:13px">Update</button></div>
+<div style="height:3px;border-radius:2px;background:var(--track,#202327);margin-top:10px"><div style="height:3px;border-radius:2px;background:var(--orange,#E0703A);width:{{ a.w }}%"></div></div>
+</div>
+</sc-for>
+</div>
+</div>
+<dc-import name="TabBar" active="networth" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:14px" id="e2">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">E2 · Stocks &amp; crypto tracker · rolls into Investments</div>
+<div data-screen-label="E2 Stocks and crypto" style="width:390px;height:{{ e2H }}px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:4px 20px 0;display:flex;flex-direction:column;gap:14px">
+<a href="#e1" style="display:flex;align-items:center;gap:6px;height:40px;color:var(--amber,#D4A24C);font-size:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>Net Worth</a>
+<div style="font-size:28px;letter-spacing:-.02em">Stocks &amp; crypto</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:20px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 60px rgba(212,162,76,.04)">
+<div style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">PORTFOLIO VALUE</div>
+<div style="font-size:44px;font-weight:300;letter-spacing:-.03em;margin-top:8px;font-variant-numeric:tabular-nums;line-height:1">{{ pfTotal }}</div>
+<div style="font-size:15px;color:var(--green,#3FA37A);margin-top:8px;font-variant-numeric:tabular-nums">+$2,940 this week · +0.95%</div>
+<div style="display:flex;height:8px;gap:3px;margin-top:18px"><div style="flex:160410;border-radius:4px;background:var(--amber,#D4A24C)"></div><div style="flex:78790;border-radius:4px;background:var(--text,#EDEAE4);opacity:.75"></div><div style="flex:29200;border-radius:4px;background:var(--orange,#E0703A)"></div><div style="flex:43600;border-radius:4px;background:var(--green,#3FA37A)"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-top:12px;font-size:13px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums">
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--amber,#D4A24C)"></span>Index ETFs 51%</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--text,#EDEAE4);opacity:.75"></span>Stocks 25%</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--orange,#E0703A)"></span>Active fund 9%</span>
+<span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:var(--green,#3FA37A)"></span>Crypto 14%</span></div>
+</div>
+<a href="#e1" style="display:flex;align-items:center;gap:12px;background:var(--s1,#17191C);border-radius:16px;padding:14px 16px;color:var(--text,#EDEAE4)">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4A24C" stroke-width="1.4" stroke-linecap="round"><path d="M5.5 17.5a8 8 0 1 1 13 0"></path><path d="M12 13.5l3.5-4"></path></svg>
+<div style="flex:1"><div style="font-size:15px">Counts toward net worth</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Investments line · 25% of assets</div></div>
+<span style="font-size:15px;font-variant-numeric:tabular-nums">$1.24M ›</span></a>
+<div style="display:flex;gap:8px">
+<sc-for list="{{ pfChips }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.onClick }}" style="height:36px;padding:0 14px;border-radius:18px;font-size:14px;white-space:nowrap;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }}">{{ c.label }} <span style="opacity:.6">{{ c.count }}</span></button></sc-for>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:4px 16px">
+<sc-for list="{{ holdings }}" as="h" hint-placeholder-count="9">
+<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid {{ h.line }}">
+<div style="width:42px;height:42px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:11px;background:{{ h.badgeBg }};color:{{ h.badgeC }}">{{ h.tk }}</div>
+<div style="flex:1;min-width:0"><div style="font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ h.name }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px;font-variant-numeric:tabular-nums">{{ h.qty }}</div></div>
+<svg width="52" height="24" viewBox="0 0 52 24" style="flex:none"><polyline points="{{ h.spark }}" fill="none" stroke="{{ h.sparkC }}" stroke-width="1.4" stroke-linejoin="round"></polyline></svg>
+<div style="text-align:right;width:78px;flex:none;font-variant-numeric:tabular-nums"><div style="font-size:15px">{{ h.valT }}</div><div style="font-size:13px;margin-top:2px;color:{{ h.chgC }}">{{ h.chgT }}</div></div>
+</div>
+</sc-for>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px;box-shadow:inset 0 0 0 1px rgba(224,112,58,.3)">
+<div style="font-size:12px;letter-spacing:.12em;color:var(--orange,#E0703A);font-weight:500">FEE LEAK</div>
+<div style="font-size:16px;margin-top:8px;line-height:1.45">Meridian Growth Fund charges 0.92% a year. A broad index fund at 0.03% would cost about $260 less each year.</div>
+<button style="height:40px;padding:0 14px;border-radius:11px;margin-top:14px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:14px;font-weight:600">Send to Waste Finder</button>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<button style="height:48px;border-radius:14px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:15px;font-weight:600">Add holding</button>
+<button style="height:48px;border-radius:14px;border:1px solid var(--line,#2A2D31);background:var(--s2,#1F2226);color:var(--text,#EDEAE4);font-size:15px">Update prices</button></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);text-align:center;line-height:1.45;padding:0 10px">Prices as of Friday's close, entered manually. No brokerage or exchange connection in this version.</div>
+</div>
+<dc-import name="TabBar" active="networth" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+</div>
+</div>
+</section>
+
+<section>
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">F</span><span style="font-size:26px">Retirement, Budget &amp; Spending</span><span style="color:var(--muted,#9A968F);font-size:15px">Slider and Category / Member toggle are live</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">F1 · Semi-retirement runway</div>
+<div data-screen-label="F1 Retirement" style="width:390px;height:1380px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:4px 20px 0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:6px;height:40px;color:var(--amber,#D4A24C);font-size:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>Home</div>
+<div style="font-size:28px;letter-spacing:-.02em">Semi-retirement</div>
+<div style="display:flex;flex-direction:column;align-items:center">
+<dc-import name="Gauge" pct="0.62" size="280" thickness="14" text="4 yrs 7 mos" num-size="34" label="62% funded" sub="Target: May 2031" hint-size="280px,280px"></dc-import>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="background:var(--s1,#17191C);border-radius:16px;padding:14px"><div style="font-size:13px;color:var(--muted,#9A968F)">Target income</div><div style="font-size:22px;font-weight:300;margin-top:4px;font-variant-numeric:tabular-nums">$18,000<span style="font-size:14px;color:var(--muted,#9A968F)">/mo</span></div></div>
+<div style="background:var(--s1,#17191C);border-radius:16px;padding:14px"><div style="font-size:13px;color:var(--muted,#9A968F)">Projected today</div><div style="font-size:22px;font-weight:300;margin-top:4px;font-variant-numeric:tabular-nums">$11,160<span style="font-size:14px;color:var(--muted,#9A968F)">/mo</span></div></div>
+<div style="grid-column:span 2;background:var(--s1,#17191C);border-radius:16px;padding:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:inset 0 0 0 1px rgba(224,112,58,.25)"><div><div style="font-size:13px;color:var(--muted,#9A968F)">Gap to close</div><div style="font-size:22px;font-weight:300;margin-top:4px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$6,840/mo</div></div><div style="width:120px"><div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px"><div style="flex:62;background:var(--amber,#D4A24C)"></div><div style="flex:38;background:var(--line,#2A2D31)"></div></div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:6px;text-align:right">62 / 100%</div></div></div>
+</div>
+<div style="border-radius:20px;padding:20px 18px;background:linear-gradient(160deg,var(--s2,#1F2226),var(--s1,#17191C));box-shadow:inset 0 0 0 1px rgba(212,162,76,.28)">
+<div style="font-size:12px;letter-spacing:.14em;color:var(--amber,#D4A24C);font-weight:500">WHAT IF YOU RECLAIM</div>
+<div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><span style="font-size:44px;font-weight:300;letter-spacing:-.02em;font-variant-numeric:tabular-nums">{{ slideT }}</span><span style="font-size:16px;color:var(--muted,#9A968F)">/mo in waste</span></div>
+<input type="range" min="0" max="1316" step="1" value="{{ slide }}" onChange="{{ onSlide }}" style="width:100%;margin:18px 0 6px">
+<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums"><span>$0</span><span>All flagged · $1,316</span></div>
+<div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--line,#2A2D31);font-size:19px;line-height:1.35">You reach your goal <span style="color:var(--green,#3FA37A)">{{ soonerT }}</span>.</div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;font-size:14px;font-variant-numeric:tabular-nums"><span style="color:var(--muted,#9A968F)">New target date</span><span>{{ newDate }}</span></div>
+<div style="display:flex;justify-content:space-between;margin-top:8px;font-size:14px;font-variant-numeric:tabular-nums"><span style="color:var(--muted,#9A968F)">Added by then, invested at 7%</span><span style="color:var(--amber,#D4A24C)">{{ addedT }}</span></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:18px">Where reclaimed money went</span><span style="font-size:15px;color:var(--green,#3FA37A);font-variant-numeric:tabular-nums">$8,420</span></div>
+<div style="display:flex;height:8px;gap:3px;margin-top:14px"><div style="flex:5200;border-radius:4px;background:var(--green,#3FA37A)"></div><div style="flex:2100;border-radius:4px;background:var(--amber,#D4A24C)"></div><div style="flex:1120;border-radius:4px;background:var(--text,#EDEAE4);opacity:.7"></div></div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;font-size:14px;font-variant-numeric:tabular-nums">
+<div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Savings</span><span>$5,200</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Investments</span><span>$2,100</span></div><div style="display:flex;justify-content:space-between"><span style="color:var(--muted,#9A968F)">Retirement goal</span><span>$1,120</span></div></div>
+</div>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">F2 · Budget &amp; spending</div>
+<div data-screen-label="F2 Budget" style="width:390px;height:1520px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:4px 20px 0;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:6px;height:40px;color:var(--amber,#D4A24C);font-size:16px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg>Home</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end"><div style="font-size:28px;letter-spacing:-.02em">October budget</div><span style="font-size:14px;color:var(--muted,#9A968F)">2 days left</span></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-variant-numeric:tabular-nums"><span style="font-size:30px;font-weight:300">$10,406</span><span style="font-size:15px;color:var(--muted,#9A968F)">of $11,720</span></div>
+<div style="height:6px;border-radius:3px;background:var(--track,#202327);margin-top:12px"><div style="height:6px;border-radius:3px;background:var(--orange,#E0703A);width:89%"></div></div>
+<div style="display:flex;gap:16px;margin-top:12px;font-size:13px;color:var(--muted,#9A968F)"><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:var(--green,#3FA37A)"></span>Under</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:var(--orange,#E0703A)"></span>Near (85%+)</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:var(--red,#D9534F)"></span>Over</span></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:4px 16px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="10">
+<div style="padding:13px 0;border-top:1px solid {{ c.line }}">
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-variant-numeric:tabular-nums"><span style="font-size:15px">{{ c.name }}</span><span style="font-size:14px"><span style="color:{{ c.color }}">{{ c.spentT }}</span><span style="color:var(--muted,#9A968F)"> / {{ c.budT }}</span></span></div>
+<div style="height:4px;border-radius:2px;background:var(--track,#202327);margin-top:9px"><div style="height:4px;border-radius:2px;background:{{ c.color }};width:{{ c.w }}%"></div></div>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 4px 0"><span style="font-size:18px">Spending breakdown</span>
+<div style="display:grid;grid-template-columns:1fr 1fr;background:var(--s1,#17191C);border-radius:10px;padding:3px;gap:3px;width:170px"><button onClick="{{ byCat }}" style="height:30px;border:none;border-radius:8px;font-size:13px;background:{{ catBg }};color:{{ catColor }}">Category</button><button onClick="{{ byMem }}" style="height:30px;border:none;border-radius:8px;font-size:13px;background:{{ memBg }};color:{{ memColor }}">Member</button></div></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:16px">
+<div style="display:flex;height:12px;gap:2px;border-radius:6px;overflow:hidden"><sc-for list="{{ breakdown }}" as="b" hint-placeholder-count="5"><div style="flex:{{ b.v }};background:{{ b.c }}"></div></sc-for></div>
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+<sc-for list="{{ breakdown }}" as="b" hint-placeholder-count="5">
+<div style="display:flex;align-items:center;gap:12px;font-variant-numeric:tabular-nums"><span style="width:10px;height:10px;border-radius:3px;background:{{ b.c }};flex:none"></span><span style="flex:1;font-size:15px">{{ b.name }}</span><span style="font-size:13px;color:var(--muted,#9A968F);width:40px;text-align:right">{{ b.pctT }}</span><span style="font-size:15px;width:72px;text-align:right">{{ b.valT }}</span></div>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+</div></section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._th = () => this.forceUpdate(); window.addEventListener('reclaim-theme', this._th); }
+  componentWillUnmount() { window.removeEventListener('reclaim-theme', this._th); }
+  renderVals() {
+    const light = !!(window.reclaimTheme && window.reclaimTheme() === 'light');
+    const set = t => window.reclaimSetTheme && window.reclaimSetTheme(t);
+    return { ...(this._rv ? this._rv() : {}), toggleTheme: () => window.reclaimToggleTheme && window.reclaimToggleTheme(), themeLabel: light ? 'Dark mode' : 'Light mode',
+      setDark: () => set('dark'), setLight: () => set('light'),
+      darkBg: light ? 'transparent' : 'var(--line,#2A2D31)', darkC: light ? 'var(--muted,#9A968F)' : 'var(--text,#EDEAE4)', lightBg: light ? 'var(--line,#2A2D31)' : 'transparent', lightC: light ? 'var(--text,#EDEAE4)' : 'var(--muted,#9A968F)' };
+  }
+
+  state = { slide: 660, view: 'cat' };
+  _rv() {
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+    const nw = [1148, 1156, 1149, 1171, 1180, 1176, 1192, 1205, 1199, 1218, 1231, 1240];
+    const y = v => 135 - ((v - 1130) / 120) * 125;
+    const pts = nw.map((v, i) => `${(i / 11) * 318},${y(v).toFixed(1)}`);
+    const A = [['Cash', '3 accounts', 86000], ['Investments', 'Brokerage ··8812', 312000], ['Retirement accounts', '401(k), 2 IRAs', 418000], ['Real estate', 'Primary home', 740000], ['Vehicles', '2 vehicles', 92000], ['Business equity', 'Restoration $260K · Cigar $100K', 360000]];
+    const L = [['Mortgage', '5.1% · 22 yrs left', 612000], ['Business loans', 'Equipment line, SBA', 118000], ['Auto loan', '3.9%', 24000], ['Credit cards', '1 card carrying a balance', 14000]];
+    const rows = (arr) => arr.map(([name, note, v], i) => ({ name, note, valT: fmt(v), w: Math.max(2, v / 740000 * 100), line: i ? 'var(--line,#2A2D31)' : 'transparent' }));
+    const s = this.state.slide;
+    const months = Math.round(s / 1316 * 14);
+    const d = new Date(2031, 4 - months, 1);
+    const newDate = d.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    const C = [['Housing', 4210, 4300], ['Travel', 1960, 2500], ['Groceries', 1140, 1400], ['Dining out', 812, 600], ['Shopping', 690, 800], ['Utilities', 610, 700], ['Auto & fuel', 420, 450], ['Health & fitness', 236, 250], ['Gifts', 180, 300], ['Entertainment', 148, 120]];
+    const cats = C.map(([name, sp, b], i) => {
+      const p = sp / b;
+      return { name, spentT: fmt(sp), budT: fmt(b), w: Math.min(100, p * 100), color: p > 1 ? 'var(--red,#D9534F)' : p >= 0.85 ? 'var(--orange,#E0703A)' : 'var(--green,#3FA37A)', line: i ? 'var(--line,#2A2D31)' : 'transparent' };
+    });
+    const pal = ['var(--amber,#D4A24C)', 'var(--green,#3FA37A)', 'var(--text,#EDEAE4)', 'var(--orange,#E0703A)', 'var(--faint,#6E6A64)'];
+    const total = 10406;
+    const catB = [['Housing', 4210], ['Travel', 1960], ['Groceries', 1140], ['Dining out', 812], ['Everything else', 2284]];
+    const memB = [['Michael', 5120], ['Dana', 3280], ['Lucas', 1240], ['Sofia', 766]];
+    const cat = this.state.view === 'cat';
+    const breakdown = (cat ? catB : memB).map(([name, v], i) => ({ name, v, valT: fmt(v), pctT: Math.round(v / total * 100) + '%', c: pal[i] }));
+    const H = [
+      ['VTI', 'Total US Market ETF', '412 sh', 121990, 0.6, 's'], ['VXUS', 'Intl. Stock ETF', '590 sh', 38420, -0.2, 's'],
+      ['MSFT', 'Microsoft', '68 sh', 31240, 0.4, 's'], ['MGRWX', 'Meridian Growth Fund', '1,140 sh', 29200, -0.3, 's'],
+      ['AAPL', 'Apple', '104 sh', 24860, 1.1, 's'], ['BRK.B', 'Berkshire Hathaway B', '46 sh', 22690, 0.2, 's'],
+      ['BTC', 'Bitcoin', '0.31 BTC', 31480, 2.8, 'c'], ['ETH', 'Ethereum', '3.2 ETH', 9640, -1.4, 'c'], ['SOL', 'Solana', '14.5 SOL', 2480, 4.2, 'c']
+    ];
+    const pf = this.state.pf || 'All';
+    const hv = H.filter(h => pf === 'All' || (pf === 'Crypto' ? h[5] === 'c' : h[5] === 's'));
+    const spark = (seed, chg) => Array.from({ length: 9 }, (_, i) => {
+      const v = Math.sin(seed * 1.7 + i * 1.3) * 5 + Math.cos(seed + i * 0.7) * 3 + (chg > 0 ? -i : i) * 1.1;
+      return `${i * 6.5},${(12 + v * 0.8).toFixed(1)}`;
+    }).join(' ');
+    const holdings = hv.map(([tk, name, qty, v, c, t], i) => ({
+      tk, name, qty, valT: fmt(v), chgT: (c > 0 ? '+' : '') + c.toFixed(1) + '%', chgC: c >= 0 ? 'var(--green,#3FA37A)' : 'var(--orange,#E0703A)',
+      sparkC: c >= 0 ? 'var(--green,#3FA37A)' : 'var(--orange,#E0703A)', spark: spark(tk.length * 3 + v % 7, c), line: i ? 'var(--line,#2A2D31)' : 'transparent',
+      badgeBg: t === 'c' ? 'rgba(212,162,76,.14)' : 'var(--s2,#1F2226)', badgeC: t === 'c' ? 'var(--amber,#D4A24C)' : 'var(--text,#EDEAE4)'
+    }));
+    const pfChips = [['All', 9], ['Stocks & ETFs', 6], ['Crypto', 3]].map(([k, n]) => {
+      const on = k === pf;
+      return { label: k, count: n, onClick: () => this.setState({ pf: k }), bg: on ? 'rgba(212,162,76,.14)' : 'var(--s1,#17191C)', border: on ? 'var(--amber,#D4A24C)' : 'var(--line,#2A2D31)', color: on ? 'var(--amber,#D4A24C)' : 'var(--text,#EDEAE4)' };
+    });
+    return {
+      holdings, pfChips, pfTotal: fmt(hv.reduce((a, h) => a + h[3], 0)), e2H: 1060 + hv.length * 69,
+      nwPts: pts.join(' '), nwArea: '0,135 ' + pts.join(' ') + ' 318,135', nwLast: y(1240),
+      assets: rows(A), liabs: rows(L),
+      slide: s, slideT: fmt(s), onSlide: e => this.setState({ slide: Number(e.target.value) }),
+      soonerT: months === 0 ? 'on schedule' : `${months} month${months > 1 ? 's' : ''} sooner`, newDate, addedT: fmt(s * 71.59 * (55 - months) / 60),
+      cats, breakdown,
+      byCat: () => this.setState({ view: 'cat' }), byMem: () => this.setState({ view: 'mem' }),
+      catBg: cat ? 'var(--line,#2A2D31)' : 'transparent', catColor: cat ? 'var(--text,#EDEAE4)' : 'var(--muted,#9A968F)',
+      memBg: cat ? 'transparent' : 'var(--line,#2A2D31)', memColor: cat ? 'var(--muted,#9A968F)' : 'var(--text,#EDEAE4)'
+    };
+  }
+}
+</script>
+</body>
+</html>

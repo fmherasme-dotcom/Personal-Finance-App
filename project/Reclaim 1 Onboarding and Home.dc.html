@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--amber,#D4A24C);text-decoration:none}a:hover{color:var(--text,#EDEAE4)}button{font-family:inherit;cursor:pointer}</style>
+<style>html[data-theme=light]{--track:#ECE8E1;--canvas:#E8E5DF;--bg:#F7F5F1;--s1:#FFFFFF;--s2:#F0EDE7;--line:#E2DED6;--ring:#D9D5CD;--rule:#DEDAD2;--dash:#C9C4BA;--dash2:#A8A298;--tick:#BDB7AD;--text:#1B1A17;--muted:#6A665E;--muted2:#76726A;--faint:#8C877E;--amber:#B07D28;--green:#2B8A60;--orange:#C25A24;--red:#C23E3A;--red2:#C23E3A;--tabbg:rgba(247,245,241,.94)}html[data-theme=light] body{background:#E8E5DF;color:#1B1A17}html[data-theme=light] [stroke="#202327"]{stroke:#ECE8E1}html[data-theme=light] [fill="#202327"]{fill:#ECE8E1}html[data-theme=light] [stop-color="#202327"]{stop-color:#ECE8E1}html[data-theme=light] [stroke="#08090A"]{stroke:#E8E5DF}html[data-theme=light] [fill="#08090A"]{fill:#E8E5DF}html[data-theme=light] [stop-color="#08090A"]{stop-color:#E8E5DF}html[data-theme=light] [stroke="#0E0F11"]{stroke:#F7F5F1}html[data-theme=light] [fill="#0E0F11"]{fill:#F7F5F1}html[data-theme=light] [stop-color="#0E0F11"]{stop-color:#F7F5F1}html[data-theme=light] [stroke="#17191C"]{stroke:#FFFFFF}html[data-theme=light] [fill="#17191C"]{fill:#FFFFFF}html[data-theme=light] [stop-color="#17191C"]{stop-color:#FFFFFF}html[data-theme=light] [stroke="#1F2226"]{stroke:#F0EDE7}html[data-theme=light] [fill="#1F2226"]{fill:#F0EDE7}html[data-theme=light] [stop-color="#1F2226"]{stop-color:#F0EDE7}html[data-theme=light] [stroke="#2A2D31"]{stroke:#E2DED6}html[data-theme=light] [fill="#2A2D31"]{fill:#E2DED6}html[data-theme=light] [stop-color="#2A2D31"]{stop-color:#E2DED6}html[data-theme=light] [stroke="#24272B"]{stroke:#D9D5CD}html[data-theme=light] [fill="#24272B"]{fill:#D9D5CD}html[data-theme=light] [stop-color="#24272B"]{stop-color:#D9D5CD}html[data-theme=light] [stroke="#1E2023"]{stroke:#DEDAD2}html[data-theme=light] [fill="#1E2023"]{fill:#DEDAD2}html[data-theme=light] [stop-color="#1E2023"]{stop-color:#DEDAD2}html[data-theme=light] [stroke="#3A3D42"]{stroke:#C9C4BA}html[data-theme=light] [fill="#3A3D42"]{fill:#C9C4BA}html[data-theme=light] [stop-color="#3A3D42"]{stop-color:#C9C4BA}html[data-theme=light] [stroke="#5A5650"]{stroke:#A8A298}html[data-theme=light] [fill="#5A5650"]{fill:#A8A298}html[data-theme=light] [stop-color="#5A5650"]{stop-color:#A8A298}html[data-theme=light] [stroke="#44474C"]{stroke:#BDB7AD}html[data-theme=light] [fill="#44474C"]{fill:#BDB7AD}html[data-theme=light] [stop-color="#44474C"]{stop-color:#BDB7AD}html[data-theme=light] [stroke="#EDEAE4"]{stroke:#1B1A17}html[data-theme=light] [fill="#EDEAE4"]{fill:#1B1A17}html[data-theme=light] [stop-color="#EDEAE4"]{stop-color:#1B1A17}html[data-theme=light] [stroke="#9A968F"]{stroke:#6A665E}html[data-theme=light] [fill="#9A968F"]{fill:#6A665E}html[data-theme=light] [stop-color="#9A968F"]{stop-color:#6A665E}html[data-theme=light] [stroke="#8A867F"]{stroke:#76726A}html[data-theme=light] [fill="#8A867F"]{fill:#76726A}html[data-theme=light] [stop-color="#8A867F"]{stop-color:#76726A}html[data-theme=light] [stroke="#6E6A64"]{stroke:#8C877E}html[data-theme=light] [fill="#6E6A64"]{fill:#8C877E}html[data-theme=light] [stop-color="#6E6A64"]{stop-color:#8C877E}html[data-theme=light] [stroke="#D4A24C"]{stroke:#B07D28}html[data-theme=light] [fill="#D4A24C"]{fill:#B07D28}html[data-theme=light] [stop-color="#D4A24C"]{stop-color:#B07D28}html[data-theme=light] [stroke="#3FA37A"]{stroke:#2B8A60}html[data-theme=light] [fill="#3FA37A"]{fill:#2B8A60}html[data-theme=light] [stop-color="#3FA37A"]{stop-color:#2B8A60}html[data-theme=light] [stroke="#E0703A"]{stroke:#C25A24}html[data-theme=light] [fill="#E0703A"]{fill:#C25A24}html[data-theme=light] [stop-color="#E0703A"]{stop-color:#C25A24}html[data-theme=light] [stroke="#D9534F"]{stroke:#C23E3A}html[data-theme=light] [fill="#D9534F"]{fill:#C23E3A}html[data-theme=light] [stop-color="#D9534F"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#E8807C"]{stroke:#C23E3A}html[data-theme=light] [fill="#E8807C"]{fill:#C23E3A}html[data-theme=light] [stop-color="#E8807C"]{stop-color:#C23E3A}html[data-theme=light] [stroke="#D4A24C88"]{stroke:#B07D2888}html[data-theme=light] [stroke="#E0703A88"]{stroke:#C25A2488}html[data-theme=light] [stroke="#3FA37A88"]{stroke:#2B8A6088}</style>
+<script src="theme.js"></script>
+</helmet>
+<div style="padding:72px 80px 120px;width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;background:var(--canvas,#08090A);color:var(--text,#EDEAE4);font-family:Geist,system-ui,sans-serif">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:80px;margin-bottom:72px;padding-bottom:28px;border-bottom:1px solid var(--rule,#1E2023)">
+<div><div style="font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:.16em;color:var(--amber,#D4A24C)">RECLAIM · HIGH-FIDELITY</div><div style="font-size:44px;letter-spacing:-.02em;margin-top:10px">Onboarding &amp; Home</div></div>
+<nav style="display:flex;gap:28px;font-size:15px"><a href="Reclaim%200%20Design%20System.dc.html">Design system</a><span style="color:var(--text,#EDEAE4)">Onboarding &amp; Home</span><a href="Reclaim%202%20Waste%20and%20Business.dc.html">Waste &amp; Business</a><a href="Reclaim%203%20Net%20Worth%20and%20Retirement.dc.html">Net Worth &amp; Retirement</a><a href="Reclaim%204%20Bills%20Coach%20Entry%20Settings.dc.html">Bills, Coach, Entry, Settings</a><button onClick="{{ toggleTheme }}" style="height:40px;padding:0 16px;border-radius:20px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);font-size:14px;display:flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg>{{ themeLabel }}</button></nav>
+</div>
+
+<section style="margin-bottom:120px">
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">A</span><span style="font-size:26px">Onboarding &amp; household setup</span><span style="color:var(--muted,#9A968F);font-size:15px">Four steps, under three minutes</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">A1 · Welcome</div>
+<div data-screen-label="A1 Welcome" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="position:absolute;inset:0;background:radial-gradient(420px 320px at 50% 34%, rgba(212,162,76,.10), transparent 70%)"></div>
+<div style="position:relative;padding:20px 28px 0;display:flex;flex-direction:column;height:calc(100% - 54px);box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:10px"><div style="width:22px;height:22px;border-radius:11px;border:2px solid var(--amber,#D4A24C);border-right-color:transparent;transform:rotate(45deg)"></div><span style="font-size:17px;letter-spacing:.02em;font-weight:500">Reclaim</span></div>
+<div style="display:flex;justify-content:center;margin-top:44px"><dc-import name="Gauge" pct="0.72" size="250" thickness="6" text="15 min" num-size="46" label="Once a week" sub="Sunday evening review" hint-size="250px,250px"></dc-import></div>
+<div style="margin-top:40px;font-size:40px;line-height:1.08;letter-spacing:-.025em;font-weight:400">Find the leaks.<br><span style="color:var(--amber,#D4A24C)">Fund the future.</span></div>
+<div style="margin-top:18px;font-size:16px;line-height:1.5;color:var(--muted,#9A968F);text-wrap:pretty">Reclaim spots wasted money across your household and both businesses, shows what it costs you, and moves it into savings and investments.</div>
+<div style="margin-top:auto;padding-bottom:44px;display:flex;flex-direction:column;gap:10px">
+<button style="height:56px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600">Set up my household</button>
+<button style="height:48px;border-radius:16px;border:none;background:transparent;color:var(--muted,#9A968F);font-size:16px">I was invited by a family member</button>
+</div></div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">A2 · Household members</div>
+<div data-screen-label="A2 Household" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:12px 20px 0;display:flex;flex-direction:column;height:calc(100% - 54px);box-sizing:border-box">
+<div style="display:flex;align-items:center;justify-content:space-between;height:44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EDEAE4" stroke-width="1.5" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg><span style="font-size:14px;color:var(--muted,#9A968F)">Step 1 of 3</span><span style="width:24px"></span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px"><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="height:3px;border-radius:2px;background:var(--line,#2A2D31)"></div><div style="height:3px;border-radius:2px;background:var(--line,#2A2D31)"></div></div>
+<div style="font-size:28px;letter-spacing:-.02em;margin-top:20px">Who's in the household?</div>
+<div style="font-size:15px;color:var(--muted,#9A968F);margin-top:8px;line-height:1.45">Everyone gets a personal view. Owners see the businesses.</div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;align-items:center;gap:14px"><div style="width:44px;height:44px;border-radius:22px;background:var(--line,#2A2D31);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:var(--amber,#D4A24C);box-shadow:inset 0 0 0 1px rgba(212,162,76,.4)">MR</div><div style="flex:1"><div style="font-size:16px;font-weight:500">Michael Reyes</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">You · Head of household</div></div><span style="font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Owner</span></div>
+</div>
+<div style="background:var(--s2,#1F2226);border-radius:18px;padding:16px;box-shadow:inset 0 0 0 1px rgba(212,162,76,.35)">
+<div style="display:flex;align-items:center;gap:14px"><div style="width:44px;height:44px;border-radius:22px;border:1px dashed var(--dash2,#5A5650);display:flex;align-items:center;justify-content:center;color:var(--muted,#9A968F)"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="9.5" r="3"></circle><rect x="2" y="4.5" width="14" height="10" rx="2.5"></rect></svg></div><div style="flex:1"><div style="font-size:16px;font-weight:500">Dana Reyes</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Spouse · Add photo</div></div></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin:16px 0 8px">Permission</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg,#0E0F11);border-radius:12px;padding:4px;gap:4px">
+<div style="height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted,#9A968F)">Owner</div>
+<div style="height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;background:var(--line,#2A2D31);color:var(--text,#EDEAE4);font-weight:500">Member</div>
+<div style="height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted,#9A968F)">View-only</div></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:8px">Adds transactions. No business accounts.</div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:14px"><div style="width:40px;height:40px;border-radius:20px;background:var(--line,#2A2D31);display:flex;align-items:center;justify-content:center;font-size:14px">LR</div><div style="flex:1"><div style="font-size:16px">Lucas Reyes</div><div style="font-size:13px;color:var(--muted,#9A968F)">Adult son</div></div><span style="font-size:12px;padding:5px 10px;border-radius:99px;background:var(--line,#2A2D31);color:var(--text,#EDEAE4)">Member</span></div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:14px"><div style="width:40px;height:40px;border-radius:20px;background:var(--line,#2A2D31);display:flex;align-items:center;justify-content:center;font-size:14px">SR</div><div style="flex:1"><div style="font-size:16px">Sofia Reyes</div><div style="font-size:13px;color:var(--muted,#9A968F)">Adult daughter</div></div><span style="font-size:12px;padding:5px 10px;border-radius:99px;border:1px solid var(--line,#2A2D31);color:var(--muted,#9A968F)">View-only</span></div>
+<div style="height:52px;border-radius:18px;border:1px dashed var(--dash,#3A3D42);display:flex;align-items:center;justify-content:center;gap:8px;color:var(--amber,#D4A24C);font-size:15px">+ Add member</div>
+</div>
+<div style="margin-top:auto;padding-bottom:44px"><button style="width:100%;height:56px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600">Continue</button></div>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">A3 · Income sources</div>
+<div data-screen-label="A3 Income" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:12px 20px 0;display:flex;flex-direction:column;height:calc(100% - 54px);box-sizing:border-box">
+<div style="display:flex;align-items:center;justify-content:space-between;height:44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EDEAE4" stroke-width="1.5" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg><span style="font-size:14px;color:var(--muted,#9A968F)">Step 2 of 3</span><span style="width:24px"></span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px"><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="height:3px;border-radius:2px;background:var(--line,#2A2D31)"></div></div>
+<div style="font-size:28px;letter-spacing:-.02em;margin-top:28px">Where does money come in?</div>
+<div style="font-size:15px;color:var(--muted,#9A968F);margin-top:8px;line-height:1.45">Owner draws are tracked apart from business spending.</div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:24px">
+<div style="background:var(--s2,#1F2226);border-radius:18px;padding:16px;box-shadow:inset 0 0 0 1px rgba(212,162,76,.35)">
+<div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">BUSINESS A</div><div style="font-size:17px;margin-top:4px">Restoration · Owner draw</div></div><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#9A968F" stroke-width="1.4" stroke-linecap="round"><path d="M5 12l5-5 5 5"></path></svg></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:6px">Amount</div><div style="height:50px;border-radius:12px;background:var(--bg,#0E0F11);border:1px solid var(--amber,#D4A24C);display:flex;align-items:center;padding:0 14px;font-size:18px;font-variant-numeric:tabular-nums">$3,500</div></div>
+<div><div style="font-size:13px;color:var(--muted,#9A968F);margin-bottom:6px">Every</div><div style="height:50px;border-radius:12px;background:var(--bg,#0E0F11);border:1px solid var(--line,#2A2D31);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:16px">Week<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#9A968F" stroke-width="1.4"><path d="M3 4.5l3 3 3-3"></path></svg></div></div></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:12px">Deposits to Household Checking ··4471</div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;letter-spacing:.12em;color:var(--amber,#D4A24C);font-weight:500">BUSINESS B</div><div style="font-size:16px;margin-top:4px">Cigar Brand · Distribution</div></div><div style="text-align:right;font-variant-numeric:tabular-nums"><div style="font-size:17px">$1,200</div><div style="font-size:13px;color:var(--muted,#9A968F)">weekly</div></div></div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">PERSONAL</div><div style="font-size:16px;margin-top:4px">Dana · Consulting</div></div><div style="text-align:right;font-variant-numeric:tabular-nums"><div style="font-size:17px">$1,500</div><div style="font-size:13px;color:var(--muted,#9A968F)">weekly avg</div></div></div>
+<div style="height:52px;border-radius:18px;border:1px dashed var(--dash,#3A3D42);display:flex;align-items:center;justify-content:center;color:var(--amber,#D4A24C);font-size:15px">+ Add income source</div>
+</div>
+<div style="margin-top:auto;padding-bottom:44px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 14px"><span style="font-size:15px;color:var(--muted,#9A968F)">Expected weekly income</span><span style="font-size:22px;font-weight:300;color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums">$6,200</span></div>
+<button style="width:100%;height:56px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600">Continue</button></div>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">A4 · Semi-retirement target</div>
+<div data-screen-label="A4 Retirement target" style="width:390px;height:844px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:12px 20px 0;display:flex;flex-direction:column;height:calc(100% - 54px);box-sizing:border-box">
+<div style="display:flex;align-items:center;justify-content:space-between;height:44px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EDEAE4" stroke-width="1.5" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg><span style="font-size:14px;color:var(--muted,#9A968F)">Step 3 of 3</span><span style="width:24px"></span></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px"><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div></div>
+<div style="font-size:28px;letter-spacing:-.02em;margin-top:20px">When do you want to step back?</div>
+<div style="font-size:15px;color:var(--muted,#9A968F);margin-top:8px;line-height:1.45">Every reclaimed dollar is measured against this goal.</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:22px 18px;margin-top:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">SEMI-RETIREMENT DATE</div>
+<div style="font-size:44px;font-weight:300;letter-spacing:-.02em;margin-top:8px">May 2031</div>
+<div style="font-size:15px;color:var(--amber,#D4A24C);margin-top:4px">4 yrs 7 mos from today</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:18px">
+<div style="height:40px;border-radius:10px;background:var(--bg,#0E0F11);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted,#9A968F)">2029</div>
+<div style="height:40px;border-radius:10px;background:var(--bg,#0E0F11);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted,#9A968F)">2030</div>
+<div style="height:40px;border-radius:10px;background:rgba(212,162,76,.16);box-shadow:inset 0 0 0 1px var(--amber,#D4A24C);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--amber,#D4A24C);font-weight:500">2031</div>
+<div style="height:40px;border-radius:10px;background:var(--bg,#0E0F11);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted,#9A968F)">2032</div>
+<div style="height:40px;border-radius:10px;background:var(--bg,#0E0F11);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted,#9A968F)">2033</div></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:22px 18px;margin-top:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="font-size:12px;letter-spacing:.14em;color:var(--muted,#9A968F);font-weight:500">TARGET MONTHLY INCOME</div>
+<div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><span style="font-size:44px;font-weight:300;letter-spacing:-.02em;font-variant-numeric:tabular-nums">$18,000</span><span style="font-size:16px;color:var(--muted,#9A968F)">/ mo</span></div>
+<div style="position:relative;height:28px;margin-top:14px"><div style="position:absolute;top:13px;left:0;right:0;height:3px;border-radius:2px;background:var(--line,#2A2D31)"></div><div style="position:absolute;top:13px;left:0;width:58%;height:3px;border-radius:2px;background:var(--amber,#D4A24C)"></div><div style="position:absolute;top:3px;left:calc(58% - 11px);width:22px;height:22px;border-radius:11px;background:var(--text,#EDEAE4);box-shadow:0 0 0 5px rgba(212,162,76,.2)"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums"><span>$5,000</span><span>$30,000</span></div>
+<div style="font-size:13px;color:var(--muted,#9A968F);margin-top:10px">Before taxes, in today's dollars.</div>
+</div>
+<div style="margin-top:auto;padding-bottom:44px"><button style="width:100%;height:56px;border-radius:16px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:17px;font-weight:600">Start my first weekly review</button></div>
+</div>
+<div style="position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:var(--text,#EDEAE4);opacity:.85"></div>
+</div></div>
+
+</div></section>
+
+<section style="margin-bottom:120px">
+<div style="display:flex;align-items:baseline;gap:18px;margin-bottom:36px"><span style="font-family:'Geist Mono',monospace;color:var(--amber,#D4A24C);font-size:15px">B</span><span style="font-size:26px">Home · Weekly Pulse</span><span style="color:var(--muted,#9A968F);font-size:15px">Full scroll shown · Household / Personal toggle is live</span></div>
+<div style="display:flex;gap:56px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">B1 · Home, iPhone (full scroll)</div>
+<div data-screen-label="B1 Home" style="width:390px;height:2170px;background:var(--bg,#0E0F11);border-radius:52px;overflow:hidden;position:relative;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 9px #050506, 0 0 0 10px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="position:absolute;top:11px;left:50%;margin-left:-62px;width:124px;height:36px;border-radius:20px;background:#000"></div>
+<div style="height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><span style="width:17px;height:11px;border-radius:2px;background:var(--text,#EDEAE4)"></span><span style="width:25px;height:12px;border-radius:4px;border:1px solid rgba(237,234,228,.5);padding:1.5px;display:flex;box-sizing:border-box"><span style="flex:1;background:var(--text,#EDEAE4);border-radius:2px"></span></span></span></div>
+<div style="padding:10px 20px 0;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:14px;color:var(--muted,#9A968F)">Week of Oct 26 – Nov 1</div><div style="font-size:28px;letter-spacing:-.02em;margin-top:2px">Weekly Pulse</div></div><div style="display:flex;gap:8px"><button onClick="{{ toggleTheme }}" style="width:42px;height:42px;border-radius:21px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg></button><div style="width:42px;height:42px;border-radius:21px;background:var(--s2,#1F2226);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--amber,#D4A24C);box-shadow:inset 0 0 0 1px rgba(212,162,76,.4)">MR</div></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;background:var(--s1,#17191C);border-radius:12px;padding:4px;gap:4px">
+<button onClick="{{ setHousehold }}" style="height:36px;border:none;border-radius:9px;font-size:14px;background:{{ hhBg }};color:{{ hhColor }}">Household</button>
+<button onClick="{{ setPersonal }}" style="height:36px;border:none;border-radius:9px;font-size:14px;background:{{ psBg }};color:{{ psColor }}">Personal</button></div>
+<div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(90deg, rgba(63,163,122,.12), rgba(63,163,122,.02));border-radius:14px;padding:12px 14px;box-shadow:inset 0 0 0 1px rgba(63,163,122,.22)"><span style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">RECLAIMED THIS YEAR</span><span style="font-size:20px;color:var(--green,#3FA37A);font-variant-numeric:tabular-nums">$8,420</span></div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:22px 0 20px;display:flex;flex-direction:column;align-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 60px rgba(212,162,76,.04)">
+<dc-import name="Gauge" pct="0.62" size="270" thickness="7" num="1240000" prefix="$" num-size="38" label="Net worth" sub="+$3,850 this week" sub-color="var(--green,#3FA37A)" hint-size="270px,270px"></dc-import>
+<div style="display:flex;gap:28px;margin-top:-6px;font-size:13px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums"><span>Assets <span style="color:var(--text,#EDEAE4)">$2.01M</span></span><span>Liabilities <span style="color:var(--text,#EDEAE4)">$768K</span></span></div>
+<div style="font-size:12px;color:var(--muted,#9A968F);margin-top:6px">Arc shows progress to your $2M semi-retirement number</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<div style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px"><div style="font-size:12px;letter-spacing:.1em;color:var(--muted,#9A968F);font-weight:500">IN</div><div style="font-size:22px;font-weight:300;margin-top:8px;font-variant-numeric:tabular-nums">{{ moneyIn }}</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:4px">{{ inSub }}</div></div>
+<div style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px"><div style="font-size:12px;letter-spacing:.1em;color:var(--muted,#9A968F);font-weight:500">OUT</div><div style="font-size:22px;font-weight:300;margin-top:8px;font-variant-numeric:tabular-nums">{{ moneyOut }}</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:4px">{{ outSub }}</div></div>
+<div style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px;box-shadow:inset 0 0 0 1px rgba(224,112,58,.25)"><div style="font-size:12px;letter-spacing:.1em;color:var(--orange,#E0703A);font-weight:500">WASTED</div><div style="font-size:22px;font-weight:300;margin-top:8px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">{{ wasted }}</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:4px">this week</div></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px 6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:18px">Waste spotted this week</span><span style="font-size:14px;color:var(--muted,#9A968F)">3 of 11</span></div>
+<div style="font-size:14px;color:var(--muted,#9A968F);margin:6px 0 8px">Potential <span style="color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums">$1,316/mo</span> · $15,792/yr</div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:500">Paid social ads</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:3px">Business B · Underperforming</div></div><div style="text-align:right;font-variant-numeric:tabular-nums"><div style="font-size:16px;color:var(--orange,#E0703A)">$400/mo</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:2px">$4,800/yr</div></div><button style="height:34px;padding:0 12px;border-radius:10px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:500">Dining over budget</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:3px">Personal · 35% over</div></div><div style="text-align:right;font-variant-numeric:tabular-nums"><div style="font-size:16px;color:var(--orange,#E0703A)">$212/mo</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:2px">$2,544/yr</div></div><button style="height:34px;padding:0 12px;border-radius:10px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+<div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:500">Second rental vendor</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:3px">Business A · Duplicate</div></div><div style="text-align:right;font-variant-numeric:tabular-nums"><div style="font-size:16px;color:var(--orange,#E0703A)">$180/mo</div><div style="font-size:12px;color:var(--muted,#9A968F);margin-top:2px">$2,160/yr</div></div><button style="height:34px;padding:0 12px;border-radius:10px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+<a href="Reclaim%202%20Waste%20and%20Business.dc.html" style="display:flex;justify-content:center;padding:14px 0;border-top:1px solid var(--line,#2A2D31);font-size:15px">Open Waste Finder</a>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:16px;display:flex;align-items:center;gap:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<dc-import name="Gauge" pct="0.62" size="92" thickness="11" ticks="false" text="62%" num-size="20" gap="0" pad-top="4" hint-size="92px,92px"></dc-import>
+<div style="flex:1"><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">RETIREMENT RUNWAY</div><div style="font-size:17px;margin-top:6px;line-height:1.3">4 yrs 7 mos to semi-retirement · 62% funded</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">May 2031 · $18,000/mo target</div></div>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#9A968F" stroke-width="1.4" stroke-linecap="round"><path d="M6 3l5 5-5 5"></path></svg>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 16px 4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><span style="font-size:18px">Bills · next 7 days</span><span style="font-size:14px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums">$8,664</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="width:40px;text-align:center"><div style="font-size:11px;letter-spacing:.1em;color:var(--red,#D9534F)">OCT</div><div style="font-size:19px;color:var(--red,#D9534F)">27</div></div><div style="flex:1"><div style="font-size:15px">Electric</div><div style="font-size:13px;color:var(--muted,#9A968F)">Michael</div></div><div style="text-align:right"><div style="font-size:15px;font-variant-numeric:tabular-nums">$312</div><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(217,83,79,.16);color:var(--red2,#E8807C)">Overdue</span></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="width:40px;text-align:center"><div style="font-size:11px;letter-spacing:.1em;color:var(--muted,#9A968F)">OCT</div><div style="font-size:19px">30</div></div><div style="flex:1"><div style="font-size:15px">Auto insurance</div><div style="font-size:13px;color:var(--muted,#9A968F)">Dana</div></div><div style="text-align:right"><div style="font-size:15px;font-variant-numeric:tabular-nums">$186</div><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Due soon</span></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="width:40px;text-align:center"><div style="font-size:11px;letter-spacing:.1em;color:var(--muted,#9A968F)">OCT</div><div style="font-size:19px">31</div></div><div style="flex:1"><div style="font-size:15px">Platinum card</div><div style="font-size:13px;color:var(--muted,#9A968F)">Michael</div></div><div style="text-align:right"><div style="font-size:15px;font-variant-numeric:tabular-nums">$3,940</div><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Due soon</span></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="width:40px;text-align:center"><div style="font-size:11px;letter-spacing:.1em;color:var(--muted,#9A968F)">NOV</div><div style="font-size:19px">1</div></div><div style="flex:1"><div style="font-size:15px">Mortgage</div><div style="font-size:13px;color:var(--muted,#9A968F)">Michael</div></div><div style="text-align:right"><div style="font-size:15px;font-variant-numeric:tabular-nums">$4,210</div><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C)">Due soon</span></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><div style="width:40px;text-align:center"><div style="font-size:11px;letter-spacing:.1em;color:var(--muted,#9A968F)">NOV</div><div style="font-size:19px">2</div></div><div style="flex:1"><div style="font-size:15px">Reelhouse</div><div style="font-size:13px;color:var(--muted,#9A968F)">Dana · last used 41 days ago</div></div><div style="text-align:right"><div style="font-size:15px;font-variant-numeric:tabular-nums">$15.99</div><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(224,112,58,.15);color:var(--orange,#E0703A)">Possibly unused</span></div></div>
+</div>
+<div style="border-radius:20px;padding:20px 18px;background:linear-gradient(160deg,var(--s2,#1F2226),var(--s1,#17191C));box-shadow:inset 0 0 0 1px rgba(212,162,76,.28), inset 0 1px 0 rgba(255,255,255,.05)">
+<div style="display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4A24C" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3.5l2 6.5 6.5 2-6.5 2-2 6.5-2-6.5-6.5-2 6.5-2z"></path></svg><span style="font-size:12px;letter-spacing:.14em;color:var(--amber,#D4A24C);font-weight:500">THIS WEEK'S COACH RECAP</span></div>
+<div style="font-size:20px;margin-top:12px;line-height:1.3">$1,720 stayed with the household. One move could add $28,600 by 2031.</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px"><span style="font-size:14px;color:var(--muted,#9A968F)">3 min read</span><button style="height:40px;padding:0 18px;border-radius:12px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:15px;font-weight:600">Open recap</button></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+<a href="Reclaim%202%20Waste%20and%20Business.dc.html" style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px;color:var(--text,#EDEAE4);font-size:14px;display:flex;flex-direction:column;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A968F" stroke-width="1.4"><rect x="3.5" y="7" width="17" height="12" rx="2.5"></rect><path d="M9 7V5h6v2"></path></svg>Business</a>
+<a href="Reclaim%203%20Net%20Worth%20and%20Retirement.dc.html" style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px;color:var(--text,#EDEAE4);font-size:14px;display:flex;flex-direction:column;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A968F" stroke-width="1.4"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2" stroke-linecap="round"></path></svg>Retirement</a>
+<a href="Reclaim%203%20Net%20Worth%20and%20Retirement.dc.html" style="background:var(--s1,#17191C);border-radius:16px;padding:14px 12px;color:var(--text,#EDEAE4);font-size:14px;display:flex;flex-direction:column;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A968F" stroke-width="1.4" stroke-linecap="round"><path d="M5 18h14M5 13h9M5 8h12"></path></svg>Budget</a>
+</div>
+</div>
+<dc-import name="TabBar" active="home" hint-size="390px,150px" style="position:absolute;left:0;right:0;bottom:0;height:150px"></dc-import>
+</div></div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--muted,#9A968F);letter-spacing:.04em">B2 · Home, iPad landscape · weekly review session</div>
+<div data-screen-label="B2 Home iPad" style="width:1280px;height:860px;background:var(--bg,#0E0F11);border-radius:32px;overflow:hidden;position:relative;display:flex;box-shadow:0 0 0 1px var(--ring,#24272B), 0 0 0 14px #050506, 0 0 0 15px var(--line,#2A2D31), 0 50px 100px rgba(0,0,0,.6)">
+<div style="width:228px;flex:none;border-right:1px solid var(--rule,#1E2023);padding:32px 18px;display:flex;flex-direction:column;gap:4px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:10px;padding:0 10px 28px"><div style="width:20px;height:20px;border-radius:10px;border:2px solid var(--amber,#D4A24C);border-right-color:transparent;transform:rotate(45deg)"></div><span style="font-size:17px;font-weight:500">Reclaim</span></div>
+<div style="height:42px;border-radius:11px;background:var(--s2,#1F2226);display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--amber,#D4A24C)">Home</div>
+<div style="height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Waste<span style="font-size:12px;color:var(--orange,#E0703A)">11</span></div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Net Worth</div>
+<div style="height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Bills<span style="width:7px;height:7px;border-radius:4px;background:var(--red,#D9534F)"></span></div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Coach</div>
+<div style="height:1px;background:var(--rule,#1E2023);margin:14px 12px"></div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Business</div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Retirement</div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Budget</div>
+<div style="height:42px;display:flex;align-items:center;padding:0 12px;font-size:15px;color:var(--muted,#9A968F)">Settings</div>
+<div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:0 10px"><div style="width:36px;height:36px;border-radius:18px;background:var(--s2,#1F2226);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--amber,#D4A24C);box-shadow:inset 0 0 0 1px rgba(212,162,76,.4)">MR</div><div><div style="font-size:14px">Michael Reyes</div><div style="font-size:12px;color:var(--muted,#9A968F)">Owner</div></div></div>
+</div>
+<div style="flex:1;padding:30px 32px;display:flex;flex-direction:column;gap:18px;min-width:0">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div><div style="font-size:15px;color:var(--muted,#9A968F)">Week of Oct 26 – Nov 1</div><div style="font-size:32px;letter-spacing:-.02em;margin-top:2px">Weekly Pulse</div></div>
+<div style="display:flex;align-items:center;gap:14px">
+<div style="display:flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:12px;background:rgba(63,163,122,.1);box-shadow:inset 0 0 0 1px rgba(63,163,122,.22)"><span style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F)">RECLAIMED THIS YEAR</span><span style="font-size:18px;color:var(--green,#3FA37A);font-variant-numeric:tabular-nums">$8,420</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;background:var(--s1,#17191C);border-radius:12px;padding:4px;gap:4px;width:240px"><button onClick="{{ setHousehold }}" style="height:34px;border:none;border-radius:9px;font-size:14px;background:{{ hhBg }};color:{{ hhColor }}">Household</button><button onClick="{{ setPersonal }}" style="height:34px;border:none;border-radius:9px;font-size:14px;background:{{ psBg }};color:{{ psColor }}">Personal</button></div>
+<button onClick="{{ toggleTheme }}" style="width:42px;height:42px;border-radius:12px;border:1px solid var(--line,#2A2D31);background:var(--s1,#17191C);color:var(--text,#EDEAE4);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"></path></svg></button><div style="display:flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:12px;background:var(--s1,#17191C)"><div style="display:flex;gap:4px"><span style="width:18px;height:4px;border-radius:2px;background:var(--amber,#D4A24C)"></span><span style="width:18px;height:4px;border-radius:2px;background:var(--amber,#D4A24C)"></span><span style="width:18px;height:4px;border-radius:2px;background:var(--line,#2A2D31)"></span><span style="width:18px;height:4px;border-radius:2px;background:var(--line,#2A2D31)"></span></div><span style="font-size:14px;color:var(--muted,#9A968F)">Review 2 of 4</span></div>
+</div></div>
+<div style="display:grid;grid-template-columns:330px minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:16px;flex:1;min-height:0">
+<div style="grid-row:1 / span 2;background:var(--s1,#17191C);border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;align-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 60px rgba(212,162,76,.04)">
+<dc-import name="Gauge" pct="0.62" size="260" thickness="7" num="1240000" prefix="$" num-size="36" label="Net worth" sub="+$3,850 this week" sub-color="var(--green,#3FA37A)" hint-size="260px,260px"></dc-import>
+<div style="display:flex;gap:24px;font-size:13px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums"><span>Assets <span style="color:var(--text,#EDEAE4)">$2.01M</span></span><span>Liabilities <span style="color:var(--text,#EDEAE4)">$768K</span></span></div>
+<div style="width:100%;margin-top:auto"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted,#9A968F);margin-bottom:8px"><span>12 months</span><span style="color:var(--green,#3FA37A)">+$92,000</span></div>
+<svg viewBox="0 0 290 70" width="100%" height="70" preserveAspectRatio="none"><polyline points="{{ nwPts }}" fill="none" stroke="#D4A24C" stroke-width="1.5" vector-effect="non-scaling-stroke"></polyline></svg></div>
+</div>
+<div style="grid-column:2 / span 2;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:18px"><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">MONEY IN</div><div style="font-size:30px;font-weight:300;margin-top:8px;font-variant-numeric:tabular-nums">{{ moneyIn }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">{{ inSubLong }}</div></div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:18px"><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">MONEY OUT</div><div style="font-size:30px;font-weight:300;margin-top:8px;font-variant-numeric:tabular-nums">{{ moneyOut }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">{{ outSubLong }}</div></div>
+<div style="background:var(--s1,#17191C);border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(224,112,58,.25)"><div style="font-size:12px;letter-spacing:.12em;color:var(--orange,#E0703A);font-weight:500">MONEY WASTED</div><div style="font-size:30px;font-weight:300;margin-top:8px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">{{ wasted }}</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:4px">$1,316/mo potential</div></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 18px 4px;min-height:0">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px"><span style="font-size:18px">Waste spotted</span><span style="font-size:14px;color:var(--amber,#D4A24C);font-variant-numeric:tabular-nums">$15,792/yr</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px">Paid social ads</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Business B</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$400/mo</span><button style="height:32px;padding:0 12px;border-radius:9px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px">Dining over budget</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Personal</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$212/mo</span><button style="height:32px;padding:0 12px;border-radius:9px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+<div style="display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line,#2A2D31)"><div style="flex:1;min-width:0"><div style="font-size:15px">Second rental vendor</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">Business A</div></div><span style="font-size:15px;color:var(--orange,#E0703A);font-variant-numeric:tabular-nums">$180/mo</span><button style="height:32px;padding:0 12px;border-radius:9px;background:rgba(212,162,76,.14);color:var(--amber,#D4A24C);border:1px solid rgba(212,162,76,.35);font-size:13px;font-weight:600">Reclaim</button></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:18px 18px 4px;min-height:0">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px"><span style="font-size:18px">Bills · next 7 days</span><span style="font-size:14px;color:var(--muted,#9A968F);font-variant-numeric:tabular-nums">$8,664</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><span style="width:52px;font-size:13px;color:var(--red,#D9534F)">Oct 27</span><span style="flex:1;font-size:15px">Electric</span><span style="font-size:15px;font-variant-numeric:tabular-nums">$312</span><span style="font-size:11px;font-weight:500;padding:3px 8px;border-radius:99px;background:rgba(217,83,79,.16);color:var(--red2,#E8807C)">Overdue</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><span style="width:52px;font-size:13px;color:var(--muted,#9A968F)">Oct 30</span><span style="flex:1;font-size:15px">Auto insurance</span><span style="font-size:15px;font-variant-numeric:tabular-nums">$186</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><span style="width:52px;font-size:13px;color:var(--muted,#9A968F)">Oct 31</span><span style="flex:1;font-size:15px">Platinum card</span><span style="font-size:15px;font-variant-numeric:tabular-nums">$3,940</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line,#2A2D31)"><span style="width:52px;font-size:13px;color:var(--muted,#9A968F)">Nov 1</span><span style="flex:1;font-size:15px">Mortgage</span><span style="font-size:15px;font-variant-numeric:tabular-nums">$4,210</span></div>
+</div>
+<div style="background:var(--s1,#17191C);border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px">
+<dc-import name="Gauge" pct="0.62" size="80" thickness="12" ticks="false" text="62%" num-size="18" gap="0" pad-top="4" hint-size="80px,80px"></dc-import>
+<div><div style="font-size:12px;letter-spacing:.12em;color:var(--muted,#9A968F);font-weight:500">RETIREMENT RUNWAY</div><div style="font-size:16px;margin-top:6px;line-height:1.35">4 yrs 7 mos · 62% funded</div><div style="font-size:13px;color:var(--muted,#9A968F);margin-top:2px">May 2031 · $18,000/mo</div></div>
+</div>
+<div style="grid-column:2 / span 2;border-radius:20px;padding:18px 22px;display:flex;align-items:center;gap:20px;background:linear-gradient(160deg,var(--s2,#1F2226),var(--s1,#17191C));box-shadow:inset 0 0 0 1px rgba(212,162,76,.28)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4A24C" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3.5l2 6.5 6.5 2-6.5 2-2 6.5-2-6.5-6.5-2 6.5-2z"></path></svg>
+<div style="flex:1"><div style="font-size:12px;letter-spacing:.14em;color:var(--amber,#D4A24C);font-weight:500">THIS WEEK'S COACH RECAP · 3 MIN</div><div style="font-size:18px;margin-top:6px">$1,720 stayed with the household. One move could add $28,600 by 2031.</div></div>
+<button style="height:44px;padding:0 20px;border-radius:12px;border:none;background:var(--amber,#D4A24C);color:#17130B;font-size:15px;font-weight:600">Open recap</button>
+</div>
+</div>
+</div>
+</div></div>
+
+</div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._th = () => this.forceUpdate(); window.addEventListener('reclaim-theme', this._th); }
+  componentWillUnmount() { window.removeEventListener('reclaim-theme', this._th); }
+  renderVals() {
+    const light = !!(window.reclaimTheme && window.reclaimTheme() === 'light');
+    const set = t => window.reclaimSetTheme && window.reclaimSetTheme(t);
+    return { ...(this._rv ? this._rv() : {}), toggleTheme: () => window.reclaimToggleTheme && window.reclaimToggleTheme(), themeLabel: light ? 'Dark mode' : 'Light mode',
+      setDark: () => set('dark'), setLight: () => set('light'),
+      darkBg: light ? 'transparent' : 'var(--line,#2A2D31)', darkC: light ? 'var(--muted,#9A968F)' : 'var(--text,#EDEAE4)', lightBg: light ? 'var(--line,#2A2D31)' : 'transparent', lightC: light ? 'var(--text,#EDEAE4)' : 'var(--muted,#9A968F)' };
+  }
+
+  state = { scope: 'household' };
+  _rv() {
+    const hh = this.state.scope === 'household';
+    const nw = [1148, 1156, 1149, 1171, 1180, 1176, 1192, 1205, 1199, 1218, 1231, 1240];
+    const min = 1140, max = 1245;
+    const nwPts = nw.map((v, i) => `${(i / 11) * 290},${66 - ((v - min) / (max - min)) * 62}`).join(' ');
+    return {
+      setHousehold: () => this.setState({ scope: 'household' }),
+      setPersonal: () => this.setState({ scope: 'personal' }),
+      hhBg: hh ? 'var(--line,#2A2D31)' : 'transparent', hhColor: hh ? 'var(--text,#EDEAE4)' : 'var(--muted,#9A968F)',
+      psBg: hh ? 'transparent' : 'var(--line,#2A2D31)', psColor: hh ? 'var(--muted,#9A968F)' : 'var(--text,#EDEAE4)',
+      moneyIn: hh ? '$6,200' : '$4,700', inSub: hh ? '$4,700 draws' : 'owner draws',
+      inSubLong: hh ? 'incl. $4,700 owner draws' : 'Business A $3,500 · B $1,200',
+      moneyOut: hh ? '$4,480' : '$2,960', outSub: hh ? '−8% vs avg' : 'your cards',
+      outSubLong: hh ? '8% below your weekly average' : 'Your cards and accounts',
+      wasted: hh ? '$304' : '$115', nwPts
+    };
+  }
+}
+</script>
+</body>
+</html>
